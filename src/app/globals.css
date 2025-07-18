@@ -1,0 +1,80 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+    --background: #ffffff;
+    --foreground: #171717;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --background: #0a0a0a;
+        --foreground: #ededed;
+    }
+}
+
+body {
+    color: var(--foreground);
+    background: var(--background);
+    font-family: Inter, system-ui, sans-serif;
+}
+
+/* Component Styles */
+@layer components {
+  .card {
+    @apply bg-white rounded-lg shadow-sm border border-neutral-medium-gray p-6 hover:shadow-md transition-shadow duration-200;
+  }
+  
+  .tag {
+    @apply px-3 py-1 rounded-full text-sm font-medium transition-colors duration-200;
+  }
+  
+  .tag-inactive {
+    @apply bg-neutral-light-gray text-neutral-dark-gray;
+  }
+  
+  .tag-active {
+    @apply bg-primary-green text-neutral-text-light;
+  }
+  
+  .prose {
+    @apply max-w-none text-neutral-text-dark leading-relaxed;
+  }
+  
+  .prose h1 {
+    @apply font-serif font-bold text-3xl md:text-4xl text-neutral-text-dark mb-6;
+  }
+  
+  .prose h2 {
+    @apply font-serif font-bold text-2xl md:text-3xl text-neutral-text-dark mb-4 mt-8;
+  }
+  
+  .prose h3 {
+    @apply font-serif font-bold text-xl md:text-2xl text-neutral-text-dark mb-3 mt-6;
+  }
+  
+  .prose p {
+    @apply mb-4 text-neutral-dark-gray;
+  }
+  
+  .prose ul, .prose ol {
+    @apply mb-4 ml-6;
+  }
+  
+  .prose li {
+    @apply mb-2 text-neutral-dark-gray;
+  }
+  
+  .prose a {
+    @apply text-primary-green hover:text-primary-green-dark underline;
+  }
+  
+  .prose img {
+    @apply rounded-lg my-6 w-full;
+  }
+  
+  .prose blockquote {
+    @apply border-l-4 border-primary-green pl-4 italic text-neutral-dark-gray my-6;
+  }
+}
