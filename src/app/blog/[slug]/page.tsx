@@ -1,5 +1,4 @@
 // src/app/blog/[slug]/page.tsx
-
 import { notFound } from "next/navigation";
 
 // Sample blog post data - in a real app, this would come from a CMS or database
@@ -9,7 +8,7 @@ const blogPosts = {
     author: "Sarah Green",
     date: "December 15, 2024",
     image:
-      "https://images.unsplash.com/photo-1569163139394-de44cb5894ce?w=800&h=400&fit=crop",
+    "https://images.unsplash.com/photo-1569163139394-de44cb5894ce?w=800&h=400&fit=crop",
     tags: ["sustainability", "carbon-footprint", "lifestyle"],
     content: `
             <p>Climate change is one of the most pressing challenges of our time, but the good news is that each of us can make a meaningful difference through simple, everyday actions. Reducing your carbon footprint doesn't require dramatic lifestyle changes—it's about making conscious choices that, when adopted by millions of people, create significant environmental impact.</p>
@@ -66,7 +65,7 @@ const blogPosts = {
     author: "David Kim",
     date: "December 10, 2024",
     image:
-      "https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=800&h=400&fit=crop",
+    "https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=800&h=400&fit=crop",
     tags: ["community", "action", "impact"],
     content: `
             <p>Environmental change doesn't happen in isolation—it thrives in communities where people come together with shared purpose and collective action. The most successful environmental initiatives are those that harness the power of community engagement, creating lasting change that extends far beyond individual efforts.</p>
@@ -142,14 +141,7 @@ const blogPosts = {
   }
 };
 
-// REMOVA a interface BlogPostPageProps por enquanto:
-// interface BlogPostPageProps {
-//   params: {
-//     slug: string;
-//   };
-// }
-
-// MODIFIQUE AQUI: Tipagem direta no parâmetro da função
+// @ts-ignore
 export default function BlogPostPage({ params }: { params: { slug: string } }) {
   const post = blogPosts[params.slug as keyof typeof blogPosts];
 
@@ -237,5 +229,4 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
         </div>
       </article>
     </div>);
-
 }
