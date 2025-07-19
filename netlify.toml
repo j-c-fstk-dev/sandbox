@@ -1,9 +1,9 @@
-# netlify.toml (na raiz do seu repositório Git)
-
 [build]
-  command = "npm run build" # MUDADO de bun run build para npm run build
+  command = "npm install --prefix functions && npm run build"
   publish = ".next"
-
-[context.production.environment]
-  NODE_VERSION = "20" # ou "18", mantenha o que você já usou
-  NEXT_CACHE_PATH = ""
+  # Se você estiver usando Netlify Functions (que é o que parece),
+  # você DEVE ter esta linha configurada para o caminho das suas funções compiladas.
+  # Se suas funções compilam para 'functions/lib', use:
+  functions = "functions/lib" # CONFIRME ESTE CAMINHO se for o caso!
+  # Se suas funções vão para 'functions/dist' ou outro lugar, ajuste de acordo.
+  # Se você não usa Netlify Functions (mas sim Firebase, por exemplo), pode remover a linha 'functions'.
