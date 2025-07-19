@@ -26,7 +26,7 @@ export default function Button({
     primary:
     "bg-primary-green text-neutral-text-light hover:bg-primary-green-dark shadow-sm",
     secondary:
-    "bg-earth-blue text-neutral-text-light hover:bg-blue-600 shadow-sm",
+    "bg-[#017d8c] text-neutral-text-light hover:bg-[#016a77] shadow-sm",
     outline:
     "border-2 border-primary-green text-primary-green hover:bg-primary-green hover:text-neutral-text-light",
     ghost: "text-primary-green hover:bg-primary-green hover:bg-opacity-10"
