@@ -1,0 +1,10 @@
+# netlify.toml (na raiz do seu repositório Git)
+
+[build]
+  command = "bun run build"
+  publish = "sandbox/.next"
+  base = "sandbox"
+
+[context.production.environment]
+  NODE_VERSION = "20" # ou "18"
+  NEXT_CACHE_PATH = ""
