@@ -20,8 +20,8 @@ export default function ContactPage() {
     }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
+  const handleSubmit = (e?: React.FormEvent) => {
+    e?.preventDefault();
     // For static site, this would typically integrate with a form service
     alert(
       "Thank you for your message! Since this is a static demo, your message was not actually sent. In a real implementation, this would be connected to a contact form service."
