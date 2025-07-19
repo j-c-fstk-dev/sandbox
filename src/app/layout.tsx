@@ -14,6 +14,8 @@ export const metadata: Metadata = {
 export default function RootLayout({
   children
 }: Readonly<{children: React.ReactNode;}>) {
+
+
   return (
     <html lang="en" data-oid="b1jifow">
       <head data-oid="x0ail_k">
@@ -32,6 +34,7 @@ export default function RootLayout({
           href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Merriweather:wght@400;700&display=swap"
           rel="stylesheet" data-oid="ubn7zd9" />
 
+        <link rel="icon" href="/favicon.png" sizes="any" />
       </head>
       <body
         className="antialiased bg-neutral-light-gray min-h-screen"
