@@ -34,7 +34,7 @@ export default function RootLayout({
           href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Merriweather:wght@400;700&display=swap"
           rel="stylesheet" data-oid="ubn7zd9" />
 
-        <link rel="icon" href="/favicon.png" sizes="any" />
+        <link rel="icon" href="https://res.cloudinary.com/dr0weongo/image/upload/v1752897191/logo_med_rucrke.png" sizes="any" />
       </head>
       <body
         className="antialiased bg-neutral-light-gray min-h-screen"
