@@ -1,9 +1,9 @@
-# netlify.toml (na raiz do seu repositório Git)
+# netlify.toml (na raiz do seu repositório Git, ao lado do package.json)
 
 [build]
   command = "bun run build"
-  publish = "sandbox/.next"
-  base = "sandbox"
+  publish = ".next" # .next será criado diretamente na raiz do repositório
+  # REMOVA A LINHA: base = "sandbox" - Ela não é necessária se o projeto já está na raiz
 
 [context.production.environment]
   NODE_VERSION = "20" # ou "18"
