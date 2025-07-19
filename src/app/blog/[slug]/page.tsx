@@ -38,7 +38,7 @@ const blogPosts = {
 
             <h3>7. Buy Less, Choose Better</h3>
             <p>When you do need to purchase items, choose quality products that will last longer. Support companies with strong environmental commitments and sustainable practices.</p>
-
+            
             <h3>8. Use Technology Wisely</h3>
             <p>Unplug electronics when not in use, enable power-saving modes on devices, and consider the environmental impact of your digital habits, including cloud storage and streaming.</p>
 
@@ -141,8 +141,14 @@ const blogPosts = {
   }
 };
 
-// @ts-ignore
-export default function BlogPostPage({ params }: { params: { slug: string } }) {
+// Interface para tipagem das props do componente de página
+interface BlogPostPageProps {
+  params: {
+    slug: string;
+  };
+}
+
+export default function BlogPostPage({ params }: BlogPostPageProps) {
   const post = blogPosts[params.slug as keyof typeof blogPosts];
 
   if (!post) {
