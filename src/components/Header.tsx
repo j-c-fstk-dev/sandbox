@@ -37,7 +37,7 @@ export default function Header() {
               <a
                 key={link.href}
                 href={link.href}
-                className="text-neutral-dark-gray hover:text-primary-green transition-colors duration-200 font-medium" data-oid="xxuuikk">
+                className="text-[#004351] hover:text-primary-green transition-colors duration-200 font-medium" data-oid="xxuuikk">
 
                   {link.label}
                 </a>
@@ -89,7 +89,7 @@ export default function Header() {
             <a
               key={link.href}
               href={link.href}
-              className="block py-3 text-lg font-medium text-neutral-dark-gray hover:text-primary-green transition-colors duration-200"
+              className="block py-3 text-lg font-medium text-[#004351] hover:text-primary-green transition-colors duration-200"
               onClick={() => setIsMobileMenuOpen(false)} data-oid="3fn6fm9">
 
                   {link.label}

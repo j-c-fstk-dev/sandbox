@@ -9,7 +9,7 @@ export default function Page() {
   // Sample data for the home page
   const featuredAction = {
     name: "Community Clean-Up Drive",
-    date: "March 22, 2024",
+    date: "July 22, 2025",
     description:
     "Join local communities worldwide in cleaning up parks, beaches, and neighborhoods."
   };
@@ -108,24 +108,25 @@ export default function Page() {
   return (
     <div className="min-h-screen" data-oid="m4_nfr9">
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-primary-green to-primary-green-dark text-neutral-text-light py-20 px-4" data-oid="b0j_mu5">
+      <section className="bg-[#c9e6db] text-[#365b36] py-20 px-4" data-oid="b0j_mu5">
         <div className="max-w-4xl mx-auto text-center animate-fade-in" data-oid="rxxavtk">
-          <h1 className="font-serif font-bold text-4xl md:text-6xl mb-6 tracking-tight" data-oid="zrkz9xm">
+ <img src="https://res.cloudinary.com/dr0weongo/image/upload/v1752897191/logo_med_rucrke.png" alt="Monthly Earth Day Logo" className="mx-auto mb-10 w-[450px] h-[450px]" />
+          <h2 className="font-serif font-bold text-3xl md:text-4xl mb-6 tracking-tight" data-oid="zrkz9xm">
             Celebrate Earth Day Every Month
-          </h1>
-          <p className="text-xl md:text-2xl mb-8 text-green-100 leading-relaxed" data-oid="r3wy448">
+</h2>
+          <p className="text-xl md:text-2xl mb-8 text-[#737373] leading-relaxed" data-oid="r3wy448">
             A global movement for monthly action creating positive impact
-          </p>
+          </p> {/* Adjusted text color for better contrast */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center" data-oid="tk156jb">
             <Button
               variant="outline"
               size="lg"
               href="/about"
-              className="border-neutral-text-light text-neutral-text-light hover:bg-neutral-text-light hover:text-primary-green" data-oid="ex0ofaj">
+              className="border-neutral-text-light text-neutral-text-light hover:bg-neutral-text-light hover:text-white" data-oid="ex0ofaj">
 
               Learn More
             </Button>
-            <Button variant="secondary" size="lg" href="/actions" data-oid="c9j-hao">
+            <Button variant="secondary" size="lg" href="/actions" className="bg-[#017d8c] hover:bg-[#016a77] text-white" data-oid="c9j-hao">
               Get Involved!
             </Button>
           </div>
