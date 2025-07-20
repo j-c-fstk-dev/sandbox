@@ -9,6 +9,30 @@ import TestimonialCard from "@/components/TestimonialCard";
 
 export default function Page() {
   // Sample data for the home page
+
+  const [showScrollClue, setShowScrollClue] = useState(true);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      // Adjust '100' to the number of pixels scrolled down after which the arrow should disappear
+      if (typeof window !== 'undefined' && window.scrollY > 100) {
+        setShowScrollClue(false);
+      } else {
+        setShowScrollClue(true);
+      }
+    };
+
+    if (typeof window !== 'undefined') {
+      window.addEventListener('scroll', handleScroll);
+    }
+
+    return () => {
+      if (typeof window !== 'undefined') {
+        window.removeEventListener('scroll', handleScroll);
+      }
+    };
+  }, []);
+
   const featuredAction = {
     name: "Community Clean-Up Drive",
     date: "July 22, 2025",
@@ -106,7 +130,7 @@ export default function Page() {
     author: "Lisa Thompson"
   }];
 
-//codigo experimetal
+
 
 
 return (
@@ -152,25 +176,23 @@ return (
       </div>
     </section>
 
-{/* Scroll Clue Section */}
-<div className="flex justify-center mt-[-40px] md:mt-[-60px] relative z-10 animate-fade-in-up" data-oid="scroll-clue-container">
-      <div className="bg-white rounded-full p-3 shadow-md border border-gray-200">
-        <svg
-          className="w-8 h-8 text-[#365b36] animate-bounce"
-          fill="none"
-          stroke="currentColor"
-          viewBox="0 0 24 24"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth="2"
-            d="M19 14l-7 7m0 0l-7-7m7 7V3"
-          ></path>
-        </svg>
-      </div>
-    </div>
+{/* Scroll Clue Section - SEM O CÍRCULO BRANCO */}
+<div className="flex justify-center mt-[-40px] md:mt-[-60px] relative z-10" data-oid="scroll-clue-container">
+      <svg
+        className="w-8 h-8 text-[#365b36] animate-bounce"
+        fill="none"
+        stroke="currentColor"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth="2"
+          d="M19 14l-7 7m0 0l-7-7m7 7V3"
+        ></path>
+      </svg>
+</div>
     
 
       {/* Impact Statistics */}
