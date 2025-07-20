@@ -150,7 +150,7 @@ export default function TestimonialsPage() {
                 <Users size={48} strokeWidth={1.5} /> {/* Ícone */}
               </div>
               <div className="text-4xl font-bold text-primary-green mb-2">
-                12,000+
+                1,000+
               </div>
               <div className="text-neutral-dark-gray text-center text-lg">Active Participants</div>
             </div>
@@ -161,7 +161,7 @@ export default function TestimonialsPage() {
                 <Globe size={48} strokeWidth={1.5} /> {/* Ícone */}
               </div>
               <div className="text-4xl font-bold text-[#017d8c] mb-2">
-                500+
+                100+
               </div>
               <div className="text-neutral-dark-gray text-center text-lg">
                 Communities Worldwide
@@ -174,7 +174,7 @@ export default function TestimonialsPage() {
                 <TreePine size={48} strokeWidth={1.5} /> {/* Ícone */}
               </div>
               <div className="text-4xl font-bold text-[#365b36] mb-2">
-                50,000
+                47,426
               </div>
               <div className="text-neutral-dark-gray text-center text-lg">Trees Planted</div>
             </div>
@@ -185,7 +185,7 @@ export default function TestimonialsPage() {
                 <Recycle size={48} strokeWidth={1.5} /> {/* Ícone */}
               </div>
               <div className="text-4xl font-bold text-neutral-dark-gray mb-2">
-                2M lbs
+                15,998 lb
               </div>
               <div className="text-neutral-dark-gray text-center text-lg">Waste Diverted</div>
             </div>
