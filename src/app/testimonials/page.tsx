@@ -200,22 +200,21 @@ export default function TestimonialsPage() {
               Featured Success Story
             </h3>
             <blockquote className="text-lg md:text-xl italic leading-relaxed mb-6" data-oid="rqpfaqd">
-              "When we started #MonthlyEarthDay in our neighborhood, we were
-              just five families. Two years later, we've transformed three
-              vacant lots into community gardens, installed solar panels on 40
-              homes, and influenced our city to adopt a zero-waste goal. The
-              monthly rhythm created unstoppable momentum for change."
+              "For over a year, ReFi Tulum has proudly honored Monthly Earth Day with hands-on 
+              action—leading cleanups in the Unesco bioreserve of Sian Ka’an, in sacred cenotes 
+              and throughout our city of Tulum , proving that regeneration begins with consistency, 
+              community, and care for the Earth, month by month and day by day."
             </blockquote>
             <div className="flex items-center justify-center space-x-4" data-oid="edqmu3_">
               <img
-                src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=60&h=60&fit=crop&crop=face"
-                alt="Maria Rodriguez"
+                src="https://pbs.twimg.com/profile_images/1816460170974617600/q6qwW4OB_400x400.jpg"
+                alt="Sandra-Refi Tulum"
                 className="w-12 h-12 rounded-full" data-oid=".8or4x:" />
 
               <div className="text-left" data-oid="3bhqbs:">
-                <div className="font-semibold" data-oid="dr5f5eo">Maria Rodriguez</div>
+                <div className="font-semibold" data-oid="dr5f5eo">Sandra-Refi Tulum</div>
                 <div className="text-green-200 text-sm" data-oid=":yj109y">
-                  Community Organizer, Portland
+                  Community Organizer, Tulum
                 </div>
               </div>
             </div>
