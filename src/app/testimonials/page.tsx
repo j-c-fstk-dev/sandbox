@@ -1,5 +1,11 @@
-import TestimonialCard from "@/components/TestimonialCard";
+"use client";
+
+import { useState, useEffect } from 'react';
 import Button from "@/components/Button";
+import BlogPostCard from "@/components/BlogPostCard";
+import CommunityPostCard from "@/components/CommunityPostCard";
+import TestimonialCard from "@/components/TestimonialCard";
+import { Users, Globe, TreePine, Recycle } from 'lucide-react';
 
 export default function TestimonialsPage() {
   // Sample testimonials data
@@ -130,41 +136,62 @@ export default function TestimonialsPage() {
           )}
         </div>
 
-        {/* Impact Statistics */}
-        <div className="bg-white rounded-lg p-8 shadow-sm mb-16 animate-slide-up" data-oid="55u5754">
-          <h2 className="font-serif font-bold text-3xl text-center text-neutral-text-dark mb-8" data-oid="8j07ez1">
+        {/* Impact Statistics - NOVO DESIGN */}
+       <section className="py-16 px-4 bg-gray-50" data-oid="impact-stats-section">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="font-serif font-bold text-3xl md:text-4xl text-center text-neutral-text-dark mb-12" data-oid="stats-title">
             Our Collective Impact
           </h2>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8" data-oid="khaak-y">
-            <div className="text-center" data-oid="296p6s8">
-              <div className="text-4xl font-bold text-primary-green mb-2" data-oid="22o5c7.">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
+            {/* Card 1: Active Participants */}
+            <div className="flex flex-col items-center p-6 bg-white rounded-lg shadow-md hover:shadow-lg transform hover:scale-105 transition-all duration-300 animate-fade-in-up-delay-1" data-oid="stats-card-1">
+              <div className="text-primary-green mb-4">
+                <Users size={48} strokeWidth={1.5} /> {/* Ícone */}
+              </div>
+              <div className="text-4xl font-bold text-primary-green mb-2">
                 12,000+
               </div>
-              <div className="text-neutral-dark-gray" data-oid="00-xkb5">Active Participants</div>
+              <div className="text-neutral-dark-gray text-center text-lg">Active Participants</div>
             </div>
-            <div className="text-center" data-oid="s.-0wv_">
-              <div className="text-4xl font-bold text-primary-green mb-2" data-oid="vb5ksb_">
+
+            {/* Card 2: Communities Worldwide */}
+            <div className="flex flex-col items-center p-6 bg-white rounded-lg shadow-md hover:shadow-lg transform hover:scale-105 transition-all duration-300 animate-fade-in-up-delay-2" data-oid="stats-card-2">
+              <div className="text-[#017d8c] mb-4"> {/* Cor diferente para variar */}
+                <Globe size={48} strokeWidth={1.5} /> {/* Ícone */}
+              </div>
+              <div className="text-4xl font-bold text-[#017d8c] mb-2">
                 500+
               </div>
-              <div className="text-neutral-dark-gray" data-oid="9o:m96t">
+              <div className="text-neutral-dark-gray text-center text-lg">
                 Communities Worldwide
               </div>
             </div>
-            <div className="text-center" data-oid="g:9eax_">
-              <div className="text-4xl font-bold text-primary-green mb-2" data-oid="13oyy56">
+
+            {/* Card 3: Trees Planted */}
+            <div className="flex flex-col items-center p-6 bg-white rounded-lg shadow-md hover:shadow-lg transform hover:scale-105 transition-all duration-300 animate-fade-in-up-delay-3" data-oid="stats-card-3">
+              <div className="text-[#365b36] mb-4"> {/* Cor diferente para variar */}
+                <TreePine size={48} strokeWidth={1.5} /> {/* Ícone */}
+              </div>
+              <div className="text-4xl font-bold text-[#365b36] mb-2">
                 50,000
               </div>
-              <div className="text-neutral-dark-gray" data-oid="c_bd:ne">Trees Planted</div>
+              <div className="text-neutral-dark-gray text-center text-lg">Trees Planted</div>
             </div>
-            <div className="text-center" data-oid="er42.ei">
-              <div className="text-4xl font-bold text-primary-green mb-2" data-oid="ue.s51w">
+
+            {/* Card 4: Waste Diverted */}
+            <div className="flex flex-col items-center p-6 bg-white rounded-lg shadow-md hover:shadow-lg transform hover:scale-105 transition-all duration-300 animate-fade-in-up-delay-4" data-oid="stats-card-4">
+              <div className="text-neutral-dark-gray mb-4"> {/* Cor diferente para variar */}
+                <Recycle size={48} strokeWidth={1.5} /> {/* Ícone */}
+              </div>
+              <div className="text-4xl font-bold text-neutral-dark-gray mb-2">
                 2M lbs
               </div>
-              <div className="text-neutral-dark-gray" data-oid="omu8_wd">Waste Diverted</div>
+              <div className="text-neutral-dark-gray text-center text-lg">Waste Diverted</div>
             </div>
           </div>
         </div>
+      </section>
 
         {/* Featured Success Story */}
         <div className="bg-gradient-to-br from-primary-green to-primary-green-dark text-neutral-text-light rounded-lg p-8 mb-16 animate-slide-up" data-oid="giu_9v.">
