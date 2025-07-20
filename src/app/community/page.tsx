@@ -9,20 +9,55 @@ export default function CommunityPage() {
 
   // Sample community posts data
   const communityPosts = [
-  {
-    type: "image" as const,
-    user: {
-      name: "@TrinityMorphy",
-      avatar:
-      "https://pbs.twimg.com/profile_images/1815756324019245056/QS6PfZWv_400x400.jpg"
-    },
-    content:
-    "Amazing turnout at our local beach cleanup! We collected over 200 pounds of trash and recyclables. The community spirit was incredible - from kids to seniors, everyone pitched in. 🌊♻️ #MonthlyEarthDay",
-    image:
-    "https://images.unsplash.com/photo-1618477247222-acbdb0e159b3?w=400&h=300&fit=crop",
-    likes: 47,
-    comments: 12,
-    date: "2 hours ago"
+    {
+      type: "carousel" as const, // <-- MUITO IMPORTANTE: Mudar para 'carousel'
+      user: {
+        name: "@TrinityMorphy",
+        avatar:
+        "https://pbs.twimg.com/profile_images/1815756324019245056/QS6PfZWv_400x400.jpg"
+      },
+      content:
+      `How did Earth Day go for me?
+      Thanks to funding from @HighlyArtistic, I was able to coordinate and support 30 local clubs from @Rotaract_D9142 and @ploggingnigeria in carrying out cleanup initiatives in celebration of World Earth Day. Here are some action shots:
+  
+      Rotaract Club of Awka Gateway
+      Disposable Waste Cleaned: 27 kg
+      Recyclable Waste Cleaned: 9.1 kg
+      Total: 35.1 kg
+  
+      Rotaract Club of Nnamdi Azikiwe University Teaching Hospital
+      Disposable Waste Cleaned: 65 kg
+      Recyclable Waste Cleaned: 37.5 kg
+      Total: 102.5 kg
+  
+      Rotaract Club of Amakohia/Akwakuma
+      Disposable Waste Cleaned: 94 kg
+      Recyclable Waste Cleaned: 1.4 kg
+      Total: 95.4 kg`, // <-- Conteúdo completo com quebras de linha
+      images: [ // <-- MUITO IMPORTANTE: Usar 'images' (array) ao invés de 'image'
+        "https://pbs.twimg.com/media/GpPzuIBXYAAIu2w?format=jpg&name=4096x4096",
+        "https://pbs.twimg.com/media/GpPzuIBWYAAnKiG?format=jpg&name=4096x4096",
+        "https://pbs.twimg.com/media/GpPzuAxXIAALneZ?format=jpg&name=4096x4096",
+        "https://pbs.twimg.com/media/GpPzuHmXcAEU4AE?format=jpg&name=4096x4096",
+        "https://pbs.twimg.com/media/Gpnp_efWUAAxVRJ?format=jpg&name=4096x4096",
+        "https://pbs.twimg.com/media/Gpnp_ejXsAAyFFi?format=jpg&name=4096x4096",
+        "https://pbs.twimg.com/media/Gpnp_e9XoAAGALN?format=jpg&name=4096x4096",
+        "https://pbs.twimg.com/media/Gpnp_ehXQAA3MQH?format=jpg&name=4096x4096",
+        "https://pbs.twimg.com/media/GpP0qdCWsAEf5AL?format=jpg&name=medium",
+        "https://pbs.twimg.com/media/GpP0qVvXYAApX1j?format=png&name=900x900",
+        "https://pbs.twimg.com/media/GpP0qVvXkAAm_Cy?format=png&name=900x900",
+        "https://pbs.twimg.com/media/GpP1jmXWoAAyGVi?format=jpg&name=medium",
+        "https://pbs.twimg.com/media/GpP1jmWWgAAEuqq?format=jpg&name=medium",
+        "https://pbs.twimg.com/media/GpP1jmbWcAAZK4P?format=jpg&name=medium",
+        "https://pbs.twimg.com/media/GpP1jmcXgAAyz-T?format=jpg&name=medium",
+        "https://pbs.twimg.com/media/GpP2lLeW0AA1tt_?format=jpg&name=4096x4096",
+        "https://pbs.twimg.com/media/GpP2lSdXoAAoY8v?format=jpg&name=4096x4096",
+        "https://pbs.twimg.com/media/GpP2lSZXAAAyqli?format=jpg&name=4096x4096",
+        "https://pbs.twimg.com/media/GpP2lSZXoAA-U_W?format=jpg&name=4096x4096",
+      ],
+      likes: 47,
+      comments: 12,
+      date: "22.05.2025" // <-- Data no formato de string simples
   },
   {
     type: "poll" as const,
