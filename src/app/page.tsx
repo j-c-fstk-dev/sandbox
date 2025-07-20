@@ -176,8 +176,8 @@ return (
       </div>
     </section>
 
-{/* Scroll Clue Section - SEM O CÍRCULO BRANCO */}
-<div className="flex justify-center mt-[-40px] md:mt-[-60px] relative z-10" data-oid="scroll-clue-container">
+{/* Scroll Clue Section - AGORA COM A LÓGICA DE DESAPARECER NO SCROLL */}
+<div className={`flex justify-center mt-[-40px] md:mt-[-60px] relative z-10 ${showScrollClue ? 'opacity-100' : 'opacity-0 pointer-events-none'} transition-opacity duration-500`} data-oid="scroll-clue-container">
       <svg
         className="w-8 h-8 text-[#365b36] animate-bounce"
         fill="none"
