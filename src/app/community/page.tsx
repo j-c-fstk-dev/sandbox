@@ -12,9 +12,9 @@ export default function CommunityPage() {
   {
     type: "image" as const,
     user: {
-      name: "Sarah Chen",
+      name: "@TrinityMorphy",
       avatar:
-      "https://images.unsplash.com/photo-1494790108755-2616b9e0e4d4?w=40&h=40&fit=crop&crop=face"
+      "https://pbs.twimg.com/profile_images/1815756324019245056/QS6PfZWv_400x400.jpg"
     },
     content:
     "Amazing turnout at our local beach cleanup! We collected over 200 pounds of trash and recyclables. The community spirit was incredible - from kids to seniors, everyone pitched in. 🌊♻️ #MonthlyEarthDay",

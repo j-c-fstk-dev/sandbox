@@ -137,12 +137,12 @@ export default function Page() {
 return (
   <div className="min-h-screen" data-oid="m4_nfr9">
     {/* Hero Section */}
-    <section className="bg-[#c9e6db] text-[#365b36] py-20 px-4" data-oid="b0j_mu5">
-      <div className="max-w-5xl mx-auto text-center flex flex-col items-center gap-6 animate-fade-in" data-oid="rxxavtk">
+    <section className="bg-[#c9e6db] text-[#365b36] py-12 px-4" data-oid="b0j_mu5">
+      <div className="max-w-5xl mx-auto text-center flex flex-col items-center gap-4 animate-fade-in" data-oid="rxxavtk">
         <img
           src="https://res.cloudinary.com/dr0weongo/image/upload/v1752897191/logo_med_rucrke.png"
           alt="Monthly Earth Day Logo"
-          className="mx-auto w-60 h-60 md:w-[350px] md:h-[350px] mb-4"
+          className="mx-auto w-60 h-60 md:w-[350px] md:h-[350px] animate-subtle-pulse mb-4 transition-transform duration-300 hover:scale-105"
         />
         
         <h2 className="font-serif font-bold text-3xl md:text-5xl tracking-tight" data-oid="zrkz9xm">

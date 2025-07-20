@@ -849,12 +849,12 @@ video {
 
   0%, 100% {
     transform: translateY(-25%);
-    animation-timing-function: cubic-bezier(0.8,0,1,1);
+    animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
   }
 
   50% {
     transform: none;
-    animation-timing-function: cubic-bezier(0,0,0.2,1);
+    animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
   }
 }
 .animate-bounce {
@@ -872,6 +872,66 @@ video {
 }
 .animate-fade-in {
   animation: fadeIn 0.5s ease-in-out;
+}
+@keyframes fade-in-up {
+
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.animate-fade-in-up-delay-1 {
+  animation: fade-in-up 0.5s ease-out forwards 0.1s;
+}
+@keyframes fade-in-up {
+
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.animate-fade-in-up-delay-2 {
+  animation: fade-in-up 0.5s ease-out forwards 0.2s;
+}
+@keyframes fade-in-up {
+
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.animate-fade-in-up-delay-3 {
+  animation: fade-in-up 0.5s ease-out forwards 0.3s;
+}
+@keyframes fade-in-up {
+
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.animate-fade-in-up-delay-4 {
+  animation: fade-in-up 0.5s ease-out forwards 0.4s;
 }
 @keyframes slideUp {
 
@@ -896,6 +956,21 @@ video {
 }
 .animate-spin {
   animation: spin 1s linear infinite;
+}
+@keyframes subtle-pulse {
+
+  0%, 100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+
+  50% {
+    transform: scale(1.01);
+    opacity: 0.95;
+  }
+}
+.animate-subtle-pulse {
+  animation: subtle-pulse 3s infinite ease-in-out;
 }
 .cursor-not-allowed {
   cursor: not-allowed;
@@ -1162,10 +1237,6 @@ video {
 .py-2 {
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
-}
-.py-20 {
-  padding-top: 5rem;
-  padding-bottom: 5rem;
 }
 .py-3 {
   padding-top: 0.75rem;
