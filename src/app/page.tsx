@@ -1,9 +1,11 @@
 "use client";
 
+import { useState, useEffect } from 'react';
 import Button from "@/components/Button";
 import BlogPostCard from "@/components/BlogPostCard";
 import CommunityPostCard from "@/components/CommunityPostCard";
 import TestimonialCard from "@/components/TestimonialCard";
+
 
 export default function Page() {
   // Sample data for the home page
@@ -104,34 +106,108 @@ export default function Page() {
     author: "Lisa Thompson"
   }];
 
+//codigo experimetal
 
-  return (
-    <div className="min-h-screen" data-oid="m4_nfr9">
-      {/* Hero Section */}
-      <section className="bg-[#c9e6db] text-[#365b36] py-20 px-4" data-oid="b0j_mu5">
-        <div className="max-w-4xl mx-auto text-center animate-fade-in" data-oid="rxxavtk">
- <img src="https://res.cloudinary.com/dr0weongo/image/upload/v1752897191/logo_med_rucrke.png" alt="Monthly Earth Day Logo" className="mx-auto mb-10 w-[450px] h-[450px]" />
-          <h2 className="font-serif font-bold text-3xl md:text-4xl mb-6 tracking-tight" data-oid="zrkz9xm">
-            Celebrate Earth Day Every Month
-</h2>
-          <p className="text-xl md:text-2xl mb-8 text-[#737373] leading-relaxed" data-oid="r3wy448">
-            A global movement for monthly action creating positive impact
-          </p> {/* Adjusted text color for better contrast */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center" data-oid="tk156jb">
-            <Button
-              variant="outline"
-              size="lg"
-              href="/about"
-              className="border-neutral-text-light text-neutral-text-light hover:bg-neutral-text-light hover:text-white" data-oid="ex0ofaj">
 
-              Learn More
-            </Button>
-            <Button variant="secondary" size="lg" href="/actions" className="bg-[#017d8c] hover:bg-[#016a77] text-white" data-oid="c9j-hao">
-              Get Involved!
-            </Button>
+return (
+  <div className="min-h-screen" data-oid="m4_nfr9">
+    {/* Hero Section */}
+    <section className="bg-[#c9e6db] text-[#365b36] py-20 px-4" data-oid="b0j_mu5">
+      <div className="max-w-5xl mx-auto text-center flex flex-col items-center gap-6 animate-fade-in" data-oid="rxxavtk">
+        <img
+          src="https://res.cloudinary.com/dr0weongo/image/upload/v1752897191/logo_med_rucrke.png"
+          alt="Monthly Earth Day Logo"
+          className="mx-auto w-60 h-60 md:w-[350px] md:h-[350px] mb-4"
+        />
+        
+        <h2 className="font-serif font-bold text-3xl md:text-5xl tracking-tight" data-oid="zrkz9xm">
+          Celebrate Earth Day Every Month
+        </h2>
+
+        <p className="text-lg md:text-2xl text-[#737373] leading-relaxed max-w-xl" data-oid="r3wy448">
+          A global movement for monthly action creating positive impact
+        </p>
+
+        <div className="flex flex-col sm:flex-row gap-4 justify-center mt-6" data-oid="tk156jb">
+          <Button
+            variant="outline"
+            size="lg"
+            href="/about"
+            className="border-[#365b36] text-[#365b36] hover:bg-[#365b36] hover:text-white transition"
+            data-oid="ex0ofaj"
+          >
+            Learn More
+          </Button>
+
+          <Button
+            variant="secondary"
+            size="lg"
+            href="/actions"
+            className="bg-[#017d8c] hover:bg-[#016a77] text-white transition"
+            data-oid="c9j-hao"
+          >
+            Get Involved!
+          </Button>
+        </div>
+      </div>
+    </section>
+
+{/* Scroll Clue Section */}
+<div className="flex justify-center mt-[-40px] md:mt-[-60px] relative z-10 animate-fade-in-up" data-oid="scroll-clue-container">
+      <div className="bg-white rounded-full p-3 shadow-md border border-gray-200">
+        <svg
+          className="w-8 h-8 text-[#365b36] animate-bounce"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth="2"
+            d="M19 14l-7 7m0 0l-7-7m7 7V3"
+          ></path>
+        </svg>
+      </div>
+    </div>
+    
+
+      {/* Impact Statistics */}
+      <div className="bg-white rounded-lg p-8 shadow-sm mb-16 animate-slide-up" data-oid="55u5754">
+          <h2 className="font-serif font-bold text-3xl text-center text-neutral-text-dark mb-8" data-oid="8j07ez1">
+            Our Collective Impact
+          </h2>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8" data-oid="khaak-y">
+            <div className="text-center" data-oid="296p6s8">
+              <div className="text-4xl font-bold text-primary-green mb-2" data-oid="22o5c7.">
+                12,000+
+              </div>
+              <div className="text-neutral-dark-gray" data-oid="00-xkb5">Active Participants</div>
+            </div>
+            <div className="text-center" data-oid="s.-0wv_">
+              <div className="text-4xl font-bold text-primary-green mb-2" data-oid="vb5ksb_">
+                500+
+              </div>
+              <div className="text-neutral-dark-gray" data-oid="9o:m96t">
+                Communities Worldwide
+              </div>
+            </div>
+            <div className="text-center" data-oid="g:9eax_">
+              <div className="text-4xl font-bold text-primary-green mb-2" data-oid="13oyy56">
+                50,000
+              </div>
+              <div className="text-neutral-dark-gray" data-oid="c_bd:ne">Trees Planted</div>
+            </div>
+            <div className="text-center" data-oid="er42.ei">
+              <div className="text-4xl font-bold text-primary-green mb-2" data-oid="ue.s51w">
+                2M lbs
+              </div>
+              <div className="text-neutral-dark-gray" data-oid="omu8_wd">Waste Diverted</div>
+            </div>
           </div>
         </div>
-      </section>
 
       {/* Featured Action Section */}
       <section className="py-16 px-4" data-oid="me:66-o">
