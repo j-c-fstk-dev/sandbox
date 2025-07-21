@@ -2,5 +2,7 @@
   "/page": "app/page.js",
   "/contact/page": "app/contact/page.js",
   "/blog/page": "app/blog/page.js",
-  "/blog/[slug]/page": "app/blog/[slug]/page.js"
+  "/blog/[slug]/page": "app/blog/[slug]/page.js",
+  "/calendar/page": "app/calendar/page.js",
+  "/calendar/[slug]/page": "app/calendar/[slug]/page.js"
 }

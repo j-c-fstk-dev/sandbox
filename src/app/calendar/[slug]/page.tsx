@@ -173,7 +173,7 @@ END:VCALENDAR`;
           </Button>
         </div>
 
-         {/* Afterwards Message */}
+         {/* Afterwards Message and Instructions */}
         {showAfterwardsMessage && (
           <div className="mt-8 p-6 bg-green-100 text-primary-green rounded-lg animate-fade-in">
             <h3 className="font-semibold text-lg mb-2">Thank you for joining!</h3>
@@ -185,6 +185,20 @@ END:VCALENDAR`;
 
               Share Your Story via Email →
             </a>
+
+             <div className="mt-6 pt-4 border-t border-green-200">
+              <h4 className="font-semibold text-md mb-2">How to add this to your calendar:</h4>
+              <p className="text-sm text-green-800">A file (.ics) has been downloaded to your device.</p>
+              <p className="text-sm text-green-800 mb-2">Open this file, and your calendar application should prompt you to add the event.</p>
+              <p className="text-sm text-green-800">Steps may vary depending on your device and calendar application:</p>
+              <ul className="list-disc list-inside text-sm text-green-800 ml-4">
+                <li><strong>On most computers:</strong> {`Locate the downloaded .ics file and double-click it.`}</li>
+                <li><strong>On mobile devices:</strong> {`You might be able to tap the downloaded file directly from your browser's downloads or your file manager.`}</li>
+                <li><strong>Google Calendar:</strong> {`You can import the .ics file via the settings menu (Settings > Import & Export > Import).`}</li>
+                <li><strong>Outlook Calendar:</strong> {`Go to File > Open & Export > Import/Export > Import an iCalendar (.ics) or vCalendar file (.vcs).`}</li>
+                <li><strong>Apple Calendar:</strong> {`Double-click the .ics file, or drag it to your calendar in the sidebar.`}</li>
+              </ul>
+            </div>
           </div>
         )}
 
