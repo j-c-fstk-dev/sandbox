@@ -45,91 +45,111 @@ export default function Page() {
   {
     title: "10 Simple Ways to Reduce Your Carbon Footprint",
     excerpt:
-    "Discover practical daily actions that can make a significant impact on your environmental footprint.",
-    date: "March 15, 2024",
+    "Discover practical daily actions that can make a significant environmental impact when adopted by communities worldwide.",
+    date: "December 15, 2024",
     image:
-    "https://images.unsplash.com/photo-1569163139394-de4e4f43e4e3?w=400&h=250&fit=crop",
-    tags: ["sustainability", "lifestyle", "carbon"],
-    slug: "reduce-carbon-footprint"
+    "https://res.cloudinary.com/dr0weongo/image/upload/v1753021402/387295953_38790678-c397-4fa1-ae4c-31916d952b5f_fx4jf4.jpg", // Updated image URL
+    tags: ["sustainability", "carbon-footprint", "lifestyle"],
+    slug: "reduce-carbon-footprint",
+    author: "Nick"
   },
   {
     title: "The Power of Community Action",
     excerpt:
-    "How collective environmental efforts are creating lasting change in communities worldwide.",
-    date: "March 12, 2024",
+    "How local environmental initiatives are creating global change, one neighborhood at a time.",
+    date: "December 10, 2024",
     image:
     "https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=400&h=250&fit=crop",
     tags: ["community", "action", "impact"],
-    slug: "power-of-community-action"
+    slug: "power-of-community-action",
+    author: "Nick"
   },
   {
-    title: "Sustainable Living: A Beginner's Guide",
+    title: "Plastic-Free Living: A Beginner's Guide",
     excerpt:
-    "Start your journey towards sustainable living with these easy-to-implement tips and strategies.",
-    date: "March 8, 2024",
+    "Start your journey towards reducing plastic waste with these easy-to-implement strategies.",
+    date: "December 5, 2024",
     image:
     "https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?w=400&h=250&fit=crop",
-    tags: ["beginner", "sustainable", "guide"],
-    slug: "sustainable-living-guide"
-  }];
+    tags: ["plastic-free", "waste-reduction", "beginner"],
+    slug: "plastic-free-living-guide",
+    author: "Nick"
+  }
+  ];
 
 
   const communityPosts = [
-  {
-    type: "image" as const,
-    user: {
-      name: "Sarah Johnson",
-      avatar:
-      "https://images.unsplash.com/photo-1494790108755-2616b9e0e4d4?w=40&h=40&fit=crop&crop=face"
-    },
-    content:
-    "Amazing turnout at our local beach cleanup! We collected over 200 pounds of trash and recyclables. 🌊♻️",
-    image:
-    "https://images.unsplash.com/photo-1618477247222-acbdb0e159b3?w=400&h=300&fit=crop",
-    likes: 47,
-    comments: 12,
-    date: "2 hours ago"
-  },
-  {
-    type: "poll" as const,
-    user: {
-      name: "Mike Chen",
-      avatar:
-      "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=40&h=40&fit=crop&crop=face"
-    },
-    content: "What should be our focus for next month's action?",
-    poll: {
-      question: "Choose our April 22nd focus:",
-      options: [
-      { text: "Tree Planting", votes: 34 },
-      { text: "Plastic Reduction", votes: 28 },
-      { text: "Energy Conservation", votes: 19 },
-      { text: "Water Protection", votes: 23 }]
-
-    },
-    likes: 23,
-    comments: 8,
-    date: "5 hours ago"
-  }];
+    {
+      type: "carousel" as const, // <-- MUITO IMPORTANTE: Mudar para 'carousel'
+      user: {
+        name: "@TrinityMorphy",
+        avatar:
+        "https://pbs.twimg.com/profile_images/1815756324019245056/QS6PfZWv_400x400.jpg"
+      },
+      content:
+      `How did Earth Day go for me?
+      Thanks to funding from @HighlyArtistic, I was able to coordinate and support 30 local clubs from @Rotaract_D9142 and @ploggingnigeria in carrying out cleanup initiatives in celebration of World Earth Day. Here are some action shots:
+  
+      Rotaract Club of Awka Gateway
+      Disposable Waste Cleaned: 27 kg
+      Recyclable Waste Cleaned: 9.1 kg
+      Total: 35.1 kg
+  
+      Rotaract Club of Nnamdi Azikiwe University Teaching Hospital
+      Disposable Waste Cleaned: 65 kg
+      Recyclable Waste Cleaned: 37.5 kg
+      Total: 102.5 kg
+  
+      Rotaract Club of Amakohia/Akwakuma
+      Disposable Waste Cleaned: 94 kg
+      Recyclable Waste Cleaned: 1.4 kg
+      Total: 95.4 kg`, // <-- Conteúdo completo com quebras de linha
+      images: [ // <-- MUITO IMPORTANTE: Usar 'images' (array) ao invés de 'image'
+        "https://pbs.twimg.com/media/GpPzuIBXYAAIu2w?format=jpg&name=4096x4096",
+        "https://pbs.twimg.com/media/GpPzuIBWYAAnKiG?format=jpg&name=4096x4096",
+        "https://pbs.twimg.com/media/GpPzuAxXIAALneZ?format=jpg&name=4096x4096",
+        "https://pbs.twimg.com/media/GpPzuHmXcAEU4AE?format=jpg&name=4096x4096",
+        "https://pbs.twimg.com/media/Gpnp_efWUAAxVRJ?format=jpg&name=4096x4096",
+        "https://pbs.twimg.com/media/Gpnp_ejXsAAyFFi?format=jpg&name=4096x4096",
+        "https://pbs.twimg.com/media/Gpnp_e9XoAAGALN?format=jpg&name=4096x4096",
+        "https://pbs.twimg.com/media/Gpnp_ehXQAA3MQH?format=jpg&name=4096x4096",
+        "https://pbs.twimg.com/media/GpP0qdCWsAEf5AL?format=medium", // Corrected format
+        "https://pbs.twimg.com/media/GpP0qVvXYAApX1j?format=png&name=900x900",
+        "https://pbs.twimg.com/media/GpP0qVvXkAAm_Cy?format=png&name=900x900",
+        "https://pbs.twimg.com/media/GpP1jmXWoAAyGVi?format=medium", // Corrected format
+        "https://pbs.twimg.com/media/GpP1jmWWgAAEuqq?format=medium", // Corrected format
+        "https://pbs.twimg.com/media/GpP1jmbWcAAZK4P?format=medium", // Corrected format
+        "https://pbs.twimg.com/media/GpP1jmcXgAAyz-T?format=medium", // Corrected format
+        "https://pbs.twimg.com/media/GpP2lLeW0AA1tt_?format=jpg&name=4096x4096",
+        "https://pbs.twimg.com/media/GpP2lSdXoAAoY8v?format=jpg&name=4096x4096",
+        "https://pbs.twimg.com/media/GpP2lSZXAAAyqli?format=jpg&name=4096x4096",
+        "https://pbs.twimg.com/media/GpP2lSZXoAA-U_W?format=jpg&name=4096x4096",
+      ],
+      likes: 47,
+      comments: 12,
+      date: "22.05.2025" // <-- Data no formato de string simples
+    }
+  ];
 
 
   const testimonials = [
+    {
+    text: "We try better was founded to help people recognize their power—that everyone can make a difference in our world’s challenges. Small actions add up, rewiring your mindset to not only boost happiness through purpose, but also uncover new ways to ‘try better.’ Monthly Earth Day has been core to this mission from the start. By inspiring people to act for the planet monthly—not just yearly—it normalizes sustainability, turning occasional gestures into daily habits. This is the vital step toward a better world.",
+    author: "Donny Jerry",
+    image: "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=60&h=60&fit=crop&crop=face" // Placeholder image
+  },
   {
-    text: "Joining #MonthlyEarthDay has transformed how I think about environmental action. It's not overwhelming - just one meaningful day each month that creates real impact.",
-    author: "Emma Rodriguez",
+    text: "For over a year, ReFi Tulum has proudly honored Monthly Earth Day with hands-on action—leading cleanups in the Unesco bioreserve of Sian Ka’an, in sacred cenotes and throughout our city of Tulum , proving that regeneration begins with consistency, community, and care for the Earth, month by month and day by day",
+    author: "Sandra - ReFI Tulum",
+    image: "https://pbs.twimg.com/profile_images/1816460170974617600/q6qwW4OB_400x400.jpg" // Placeholder image
+  },
+  {
+    text: "Participating in #MonthlyEarthDay has transformed how I think about environmental action. It's not about perfection, it's about consistent, meaningful steps. The monthly rhythm keeps me motivated and connected to a global community of changemakers.",
+    author: "Maria Rodriguez",
     image:
     "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=60&h=60&fit=crop&crop=face"
-  },
-  {
-    text: "Our community has planted over 500 trees through this movement. It's incredible what we can achieve when we work together consistently.",
-    author: "David Kim",
-    image:
-    "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=60&h=60&fit=crop&crop=face"
-  },
-  {
-    text: "The monthly rhythm makes environmental action sustainable. I never feel burned out, and I'm always excited for the 22nd of each month!",
-    author: "Lisa Thompson"
-  }];
+  }
+  ];
 
 
 
