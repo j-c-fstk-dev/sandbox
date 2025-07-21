@@ -7,7 +7,7 @@ export default function BlogPage() {
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedTag, setSelectedTag] = useState("");
 
-  // Sample blog posts data
+  // Sample blog posts data - Only the first three posts
   const blogPosts = [
   {
     title: "10 Simple Ways to Reduce Your Carbon Footprint",
@@ -41,73 +41,8 @@ export default function BlogPage() {
     tags: ["plastic-free", "waste-reduction", "beginner"],
     slug: "plastic-free-living-guide",
     author: "Nick"
-  },
-  {
-    title: "Urban Gardening for Environmental Impact",
-    excerpt:
-    "Transform your city space into a green oasis while contributing to local food security and biodiversity.",
-    date: "November 28, 2024",
-    image:
-    "https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=400&h=250&fit=crop",
-    tags: ["gardening", "urban", "biodiversity", "food-security"],
-    slug: "urban-gardening-for-environmental-impact", // Corrected slug
-    author: "Nick"
-  },
-  {
-    title: "Renewable Energy: Making the Switch at Home",
-    excerpt:
-    "A comprehensive guide to transitioning your household to renewable energy sources.",
-    date: "November 22, 2024",
-    image:
-    "https://images.unsplash.com/photo-1509391366360-2e959784a276?w=400&h=250&fit=crop",
-    tags: ["renewable-energy", "solar", "home-improvement"],
-    slug: "renewable-energy-making-the-switch-at-home", // Corrected slug
-    author: "Nick"
-  },
-  {
-    title: "Water Conservation Strategies That Work",
-    excerpt:
-    "Effective methods for reducing water consumption while maintaining quality of life.",
-    date: "November 15, 2024",
-    image:
-    "https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=400&h=250&fit=crop",
-    tags: ["water-conservation", "sustainability", "home-tips"],
-    slug: "water-conservation-strategies-that-work", // Corrected slug
-    author: "Nick"
-  },
-  {
-    title: "The Science Behind Climate Action",
-    excerpt:
-    "Understanding the research that drives our environmental initiatives and monthly actions.",
-    date: "November 8, 2024",
-    image:
-    "https://images.unsplash.com/photo-1611273426858-450d8e3c9fce?w=400&h=250&fit=crop",
-    tags: ["climate-science", "research", "education"],
-    slug: "the-science-behind-climate-action", // Corrected slug
-    author: "Nick"
-  },
-  {
-    title: "Building Sustainable Communities",
-    excerpt:
-    "How neighborhoods are coming together to create lasting environmental change.",
-    date: "October 30, 2024",
-    image:
-    "https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?w=400&h=250&fit=crop",
-    tags: ["community", "sustainability", "neighborhood"],
-    slug: "building-sustainable-communities", // Corrected slug
-    author: "Nick"
-  },
-  {
-    title: "Zero Waste Kitchen: Getting Started",
-    excerpt:
-    "Transform your kitchen into a zero-waste zone with these practical tips and strategies.",
-    date: "October 22, 2024",
-    image:
-    "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=400&h=250&fit=crop",
-    tags: ["zero-waste", "kitchen", "lifestyle", "beginner"],
-    slug: "zero-waste-kitchen-guide",
-    author: "Nick"
-  }];
+  }
+  ];
 
 
   // Get all unique tags
@@ -154,7 +89,7 @@ export default function BlogPage() {
 
             </div>
 
-            {/* Tag Filter */}
+            {/* Tag Filter - Only show tags for the 3 posts */}
             <div className="flex flex-wrap gap-2 items-center" data-oid="la5zb68">
               <span className="text-sm font-medium text-neutral-dark-gray whitespace-nowrap" data-oid=".bnxm5-">
                 Filter by:
@@ -165,7 +100,8 @@ export default function BlogPage() {
 
                 All
               </button>
-              {allTags.map((tag) =>
+              {/* Ensure allTags is generated only from the 3 posts */}
+              {Array.from(new Set(blogPosts.flatMap(post => post.tags))).sort().map((tag) =>
               <button
                 key={tag}
                 onClick={() => setSelectedTag(tag === selectedTag ? "" : tag)}

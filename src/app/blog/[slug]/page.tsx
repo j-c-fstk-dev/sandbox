@@ -1,5 +1,6 @@
 // src/app/blog/[slug]/page.tsx
 import { notFound } from "next/navigation";
+import Link from 'next/link';
 
 // Sample blog post data - in a real app, this would come from a CMS or database
 const blogPosts = {
@@ -228,9 +229,22 @@ interface BlogPostPageProps {
     slug: string;
   };
 }
-
 export default function BlogPostPage({ params }: BlogPostPageProps) {
   const post = blogPosts[params.slug as keyof typeof blogPosts];
+
+  // Define the order of the three specific posts
+  const featuredPostSlugs = [
+    "reduce-carbon-footprint",
+    "power-of-community-action",
+    "plastic-free-living-guide"
+  ];
+
+  // Find the index of the current post in the featured list
+  const currentPostIndex = featuredPostSlugs.indexOf(params.slug);
+
+  // Determine the previous and next post slugs
+  const prevPostSlug = currentPostIndex > 0 ? featuredPostSlugs[currentPostIndex - 1] : null;
+  const nextPostSlug = currentPostIndex < featuredPostSlugs.length - 1 ? featuredPostSlugs[currentPostIndex + 1] : null;
 
   if (!post) {
     notFound();
@@ -253,7 +267,7 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
 
           <div className="flex flex-wrap justify-center gap-2 mb-8" data-oid="pw23p_r">
             {post.tags.map((tag, index) =>
-            <span key={index} className="tag tag-inactive" data-oid="3z6bop5">
+              <span key={index} className="tag tag-inactive" data-oid="3z6bop5">
                 {tag}
               </span>
             )}
@@ -266,7 +280,6 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
             src={post.image}
             alt={post.title}
             className="w-full h-64 md:h-96 object-cover rounded-lg shadow-sm" data-oid="1w1f:15" />
-
         </div>
 
         {/* Content */}
@@ -275,45 +288,31 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
           dangerouslySetInnerHTML={{ __html: post.content }} data-oid="t4ex4xy" />
 
 
-        {/* Share Buttons */}
-        <div className="mt-12 pt-8 border-t border-neutral-medium-gray" data-oid="3j2o6cc">
-          <div className="flex items-center justify-center gap-4" data-oid="vvl5902">
-            <span className="text-neutral-dark-gray font-medium" data-oid="gk1ulri">
-              Share this post:
-            </span>
-            <div className="flex gap-3" data-oid="rwuq-2_">
-              <button className="bg-earth-blue text-neutral-text-light p-2 rounded-full hover:bg-blue-600 transition-colors duration-200" data-oid="nqqufyt">
-                <svg
-                  className="w-5 h-5"
-                  fill="currentColor"
-                  viewBox="0 0 24 24" data-oid="s3le4wm">
-
-                  <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" data-oid="qrfpm-c" />
-                </svg>
-              </button>
-              <button className="bg-primary-green text-neutral-text-light p-2 rounded-full hover:bg-primary-green-dark transition-colors duration-200" data-oid="mvexv8t">
-                <svg
-                  className="w-5 h-5"
-                  fill="currentColor"
-                  viewBox="0 0 20 20" data-oid="nfll7p-">
-
-                  <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" data-oid="beoksz7" />
-                  <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" data-oid="p2:xx2l" />
-                </svg>
-              </button>
-            </div>
-          </div>
-        </div>
+        {/* Share Buttons - You can add these if needed */}
+        {/* <div className="mt-12 pt-8 border-t border-neutral-medium-gray" data-oid="3j2o6cc"></div> */}
 
         {/* Navigation */}
         <div className="mt-12 text-center" data-oid="bqix1so">
-          <a
-            href="/blog"
-            className="inline-flex items-center text-primary-green hover:text-primary-green-dark font-medium transition-colors duration-200" data-oid="u2j7az:">
+          {prevPostSlug && (
+            <Link href={`/blog/${prevPostSlug}`} className="inline-flex items-center text-primary-green hover:text-primary-green-dark font-medium transition-colors duration-200">
+              ← Previous Post
+            </Link>
+          )}
+          {nextPostSlug && (
+            <Link href={`/blog/${nextPostSlug}`} className="inline-flex items-center text-primary-green hover:text-primary-green-dark font-medium transition-colors duration-200 ml-4">
+              Next Post →
+            </Link>
+          )}
+           <div className="mt-8 text-center" data-oid="bqix1so">
+               <a
+                 href="/blog"
+                 className="inline-flex items-center text-primary-green hover:text-primary-green-dark font-medium transition-colors duration-200" data-oid="u2j7az:">
 
-            ← Back to Blog
-          </a>
+                 ← Back to Blog
+               </a>
+           </div>
         </div>
       </article>
-    </div>);
+    </div>
+  );
 }

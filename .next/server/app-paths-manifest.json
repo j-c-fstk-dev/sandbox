@@ -1,6 +1,4 @@
 {
-  "/blog/urban-gardening-for-environmental-impact/page": "app/blog/urban-gardening-for-environmental-impact/page.js",
-  "/blog/renewable-energy-making-the-switch-at-home/page": "app/blog/renewable-energy-making-the-switch-at-home/page.js",
   "/page": "app/page.js",
   "/blog/page": "app/blog/page.js",
   "/blog/[slug]/page": "app/blog/[slug]/page.js",
