@@ -98,7 +98,7 @@ export default function AboutPage() {
           <div className="flex flex-col lg:flex-row items-center lg:items-start gap-8" data-oid="5dasm-t">
             <div className="flex-shrink-0" data-oid="x-4byih">
               <img
-                src="https://res.cloudinary.com/dr0weongo/image/upload/v1752982329/IMG_20250720_003012_816_dnh8va.jpg"
+                src="https://res.cloudinary.com/dr0weongo/image/upload/v1753077583/IMG-20250720-WA0013_myq2kv.jpg"
                 alt="Nick - Founder of #MonthlyEarthDay"
                 className="w-48 h-48 rounded-full object-cover shadow-md" data-oid="udn.p10" />
 
