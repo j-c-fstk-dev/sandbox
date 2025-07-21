@@ -66,7 +66,7 @@ export default function Footer() {
                 <span data-oid="ket8c:e">MonthlyEarthDay@gmail.com</span>
               </a>
               <a
-                href="https://x.com/highlyartistic"
+                href="https://x.com/MonthlyEarthDay" // Updated X link
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center space-x-2 text-gray-300 hover:text-primary-green transition-colors duration-200" data-oid="3z4rayv">
@@ -78,7 +78,7 @@ export default function Footer() {
 
                   <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" data-oid="691nouf" />
                 </svg>
-                <span data-oid="l8gzqq.">@highlyartistic</span>
+                <span data-oid="l8gzqq.">@MonthlyEarthDay</span> {/* Updated X handle text */}
               </a>
             </div>
           </div>

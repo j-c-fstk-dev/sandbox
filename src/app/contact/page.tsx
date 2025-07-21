@@ -115,12 +115,12 @@ export default function ContactPage() {
                     Stay updated on actions, events, and community highlights
                   </p>
                   <a
-                    href="https://x.com/highlyartistic"
+                    href="https://x.com/MonthlyEarthDay" // Updated X link
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-primary-green hover:text-primary-green-dark font-medium transition-colors duration-200" data-oid="dnj3_-v">
 
-                    @highlyartistic
+                    @MonthlyEarthDay {/* Updated X handle text */}
                   </a>
                 </div>
               </div>
