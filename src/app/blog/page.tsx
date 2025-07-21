@@ -50,7 +50,7 @@ export default function BlogPage() {
     image:
     "https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=400&h=250&fit=crop",
     tags: ["gardening", "urban", "biodiversity", "food-security"],
-    slug: "urban-gardening-impact",
+    slug: "urban-gardening-for-environmental-impact", // Corrected slug
     author: "Nick"
   },
   {
@@ -61,7 +61,7 @@ export default function BlogPage() {
     image:
     "https://images.unsplash.com/photo-1509391366360-2e959784a276?w=400&h=250&fit=crop",
     tags: ["renewable-energy", "solar", "home-improvement"],
-    slug: "renewable-energy-home-switch",
+    slug: "renewable-energy-making-the-switch-at-home", // Corrected slug
     author: "Nick"
   },
   {
@@ -72,7 +72,7 @@ export default function BlogPage() {
     image:
     "https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=400&h=250&fit=crop",
     tags: ["water-conservation", "sustainability", "home-tips"],
-    slug: "water-conservation-strategies",
+    slug: "water-conservation-strategies-that-work", // Corrected slug
     author: "Nick"
   },
   {
@@ -83,7 +83,7 @@ export default function BlogPage() {
     image:
     "https://images.unsplash.com/photo-1611273426858-450d8e3c9fce?w=400&h=250&fit=crop",
     tags: ["climate-science", "research", "education"],
-    slug: "science-behind-climate-action",
+    slug: "the-science-behind-climate-action", // Corrected slug
     author: "Nick"
   },
   {
@@ -94,7 +94,7 @@ export default function BlogPage() {
     image:
     "https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?w=400&h=250&fit=crop",
     tags: ["community", "sustainability", "neighborhood"],
-    slug: "building-sustainable-communities",
+    slug: "building-sustainable-communities", // Corrected slug
     author: "Nick"
   },
   {

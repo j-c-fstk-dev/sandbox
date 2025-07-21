@@ -35,6 +35,21 @@
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
       "static/chunks/app/calendar/[slug]/page.js"
+    ],
+    "/blog/urban-gardening-for-environmental-impact/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/blog/urban-gardening-for-environmental-impact/page.js"
+    ],
+    "/blog/renewable-energy-making-the-switch-at-home/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/blog/renewable-energy-making-the-switch-at-home/page.js"
+    ],
+    "/blog/water-conservation-strategies-that-work/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/blog/water-conservation-strategies-that-work/page.js"
     ]
   }
 }
