@@ -15,7 +15,7 @@ export default function BlogPage() {
     "Discover practical daily actions that can make a significant environmental impact when adopted by communities worldwide.",
     date: "December 15, 2024",
     image:
-    "https://images.unsplash.com/photo-1569163139394-de44cb5894ce?w=400&h=250&fit=crop",
+    "https://res.cloudinary.com/dr0weongo/image/upload/v1753021402/387295953_38790678-c397-4fa1-ae4c-31916d952b5f_fx4jf4.jpg", // Updated image URL
     tags: ["sustainability", "carbon-footprint", "lifestyle"],
     slug: "reduce-carbon-footprint"
   },
