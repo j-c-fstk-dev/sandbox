@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Button from "@/components/Button"; // Assuming you might use Button for navigation
+import Link from 'next/link'; // Import Link for navigation
 
 // Function to generate Monthly Earth Day events
 const generateMonthlyEarthDayEvents = (yearsToGenerate: number) => {
@@ -51,7 +52,7 @@ export default function CalendarPage() {
     "July", "August", "September", "October", "November", "December"
   ];
 
-  // Filter events for the currently displayed month and year
+  // Filter events for the currently displayed month and year INSIDE the component
   const eventsForDisplayMonth = monthlyEarthDayEvents.filter(event => {
     const eventDate = new Date(event.date);
     return eventDate.getMonth() === displayMonth && eventDate.getFullYear() === displayYear;
@@ -90,7 +91,7 @@ export default function CalendarPage() {
       <div className="max-w-6xl mx-auto">
         {/* Header */}
         <div className="text-center mb-12 animate-fade-in">
-          <h1 className="font-serif font-bold text-4xl md:text-5xl text-neutral-text-dark mb-6">
+          <h1 className="font-serif font-bold text-4xl md:text-5xl text-primary-green mb-6"> {/* Changed text color to primary-green */}
             Calendar of Actions
           </h1>
           <p className="text-xl text-neutral-dark-gray leading-relaxed max-w-3xl mx-auto">
@@ -99,46 +100,45 @@ export default function CalendarPage() {
           </p>
         </div>
 
-        {/* Next Upcoming Event (still useful to highlight)*/}
+        {/* Next Upcoming Event (still useful to highlight) - Adjusted styling */}
          {nextUpcomingEvent && (
-          <div className="bg-primary-green text-neutral-text-light rounded-lg p-8 mb-12 animate-slide-up">
-            <h3 className="font-serif font-bold text-2xl mb-4">
+          <div className="bg-[#c9e6db] text-[#365b36] rounded-lg p-8 mb-12 animate-slide-up"> {/* Updated background and text colors */}
+            <h3 className="font-serif font-bold text-2xl mb-4 text-[#365b36]"> {/* Ensured heading text color matches section text color */}
               Next Monthly Earth Day:
             </h3>
             <p className="text-lg mb-4">
               {formatDate(nextUpcomingEvent.date)}
             </p>
-            <p className="text-lg mb-6 text-green-100">
+            <p className="text-lg mb-6 text-[#737373] leading-relaxed"> {/* Updated paragraph text color and added leading-relaxed */}
               {nextUpcomingEvent.description}
             </p>
-            <a
+            <Link
               href={`/calendar/${nextUpcomingEvent.slug}`}
-              className="bg-neutral-text-light text-primary-green px-6 py-3 rounded-full font-medium hover:bg-gray-100 transition-colors duration-200">
-
+              className="border-2 border-[#365b36] text-[#365b36] hover:bg-[#365b36] hover:text-white transition px-6 py-3 rounded-full font-medium"> {/* Applied outlined button classes */}
               View Details
-            </a>
+            </Link>
           </div>
         )}
 
-        {/* Month Navigation and Display */}
+        {/* Month Navigation and Display - Adjusted styling */}
         <div className="bg-white rounded-lg p-6 shadow-sm mb-8 animate-slide-up">
           <div className="flex items-center justify-between mb-6">
             <button
               onClick={() => navigateMonth("prev")}
-              className="flex items-center space-x-2 text-primary-green hover:text-primary-green-dark font-medium transition-colors duration-200">
+              className="flex items-center space-x-2 text-[#365b36] hover:text-primary-green-dark font-medium transition-colors duration-200"> {/* Changed text color to match hero section */}
               <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7"></path>
               </svg>
               <span>Previous</span>
             </button>
 
-            <h2 className="font-serif font-bold text-2xl md:text-3xl text-neutral-text-dark">
+            <h2 className="font-serif font-bold text-2xl md:text-3xl text-primary-green"> {/* Changed text color to primary-green */}
               {months[displayMonth]} {displayYear}
             </h2>
 
             <button
               onClick={() => navigateMonth("next")}
-              className="flex items-center space-x-2 text-primary-green hover:text-primary-green-dark font-medium transition-colors duration-200">
+              className="flex items-center space-x-2 text-[#365b36] hover:text-primary-green-dark font-medium transition-colors duration-200"> {/* Changed text color to match hero section */}
               <span>Next</span>
               <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7"></path>
@@ -146,7 +146,7 @@ export default function CalendarPage() {
             </button>
           </div>
 
-          {/* Display Events for the Month */}
+          {/* Display Events for the Month - Adjusted styling */}
           <div className="space-y-6">
             {eventsForDisplayMonth.length > 0 ? (
               eventsForDisplayMonth.map((event, index) => (
@@ -154,7 +154,7 @@ export default function CalendarPage() {
                   <div className="flex flex-col lg:flex-row lg:items-start gap-6">
                      {/* Date Badge */}
                      <div className="flex-shrink-0">
-                       <div className="bg-primary-green text-neutral-text-light rounded-lg p-4 text-center min-w-[120px]">
+                       <div className="bg-[#c9e6db] text-[#365b36] rounded-lg p-4 text-center min-w-[120px]"> {/* Updated background and text colors */}
                          <div className="text-2xl font-bold">
                            {new Date(event.date).getDate()}
                          </div>
@@ -166,7 +166,7 @@ export default function CalendarPage() {
 
                      {/* Event Details */}
                      <div className="flex-1">
-                       <h3 className="font-serif font-bold text-xl md:text-2xl text-neutral-text-dark mb-2">
+                       <h3 className="font-serif font-bold text-xl md:text-2xl text-neutral-text-dark">
                          {event.name}
                        </h3>
                        <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4 text-neutral-dark-gray mb-4">
@@ -195,12 +195,11 @@ export default function CalendarPage() {
                          ))}
                        </div>
                         <div className="mt-4">
-                          <a
+                          <Link
                             href={`/calendar/${event.slug}`}
-                            className="text-primary-green hover:text-primary-green-dark font-medium transition-colors duration-200">
-
+                            className="text-[#365b36] hover:text-primary-green-dark font-medium transition-colors duration-200"> {/* Changed text color to match hero section */}
                             View Details →
-                          </a>
+                          </Link>
                         </div>
                      </div>
                    </div>
@@ -220,33 +219,34 @@ export default function CalendarPage() {
           </div>
         </div>
 
-        {/* Call to Action */}
-        <div className="mt-16 text-center">
-          <div className="bg-primary-green text-neutral-text-light rounded-lg p-8 animate-slide-up">
-            <h3 className="font-serif font-bold text-2xl mb-4">
+        {/* Call to Action - Adjusting styling to match Hero Section */}
+        <div className="mt-16 text-center bg-[#c9e6db] text-[#365b36] py-12 px-4 rounded-lg animate-slide-up"> {/* Updated background and text colors, added padding and rounded corners */}
+          <div className="max-w-xl mx-auto">
+            <h3 className="font-serif font-bold text-2xl mb-4 text-[#365b36]"> {/* Ensured heading text color matches section text color */}
               Never Miss an Action
             </h3>
-            <p className="text-lg mb-6 text-green-100">
+            <p className="text-lg mb-6 text-[#737373] leading-relaxed"> {/* Updated paragraph text color and added leading-relaxed */}
               Stay updated on all our monthly environmental actions and
               community events.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a
+            <div className="flex flex-col sm:flex-row gap-4 justify-center mt-6"> {/* Added top margin for spacing */}
+
+              {/* Button 1 - Matching filled style */}
+              <Link
                 href="/community"
-                className="bg-neutral-text-light text-primary-green px-6 py-3 rounded-full font-medium hover:bg-gray-100 transition-colors duration-200">
-
+                className="bg-[#017d8c] hover:bg-[#016a77] text-white transition px-6 py-3 rounded-full font-medium"> {/* Applied filled button classes */}
                 Join Community
-              </a>
-              <a
-                href="/contact"
-                className="border-2 border-neutral-text-light text-neutral-text-light px-6 py-3 rounded-full font-medium hover:bg-neutral-text-light hover:text-primary-green transition-colors duration-200">
+              </Link>
 
+              {/* Button 2 - Matching outlined style */}
+              <Link
+                href="/contact"
+                className="border-2 border-[#365b36] text-[#365b36] hover:bg-[#365b36] hover:text-white transition px-6 py-3 rounded-full font-medium"> {/* Applied outlined button classes */}
                 Get Notifications
-              </a>
+              </Link>
             </div>
           </div>
         </div>
       </div>
     </div>);
-
 }

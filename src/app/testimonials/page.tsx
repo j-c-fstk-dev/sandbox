@@ -82,7 +82,7 @@ export default function TestimonialsPage() {
       <div className="max-w-6xl mx-auto" data-oid="1i-bcv8">
         {/* Header */}
         <div className="text-center mb-12 animate-fade-in" data-oid="bxmant0">
-          <h1 className="font-serif font-bold text-4xl md:text-5xl text-neutral-text-dark mb-6" data-oid="tjiafdh">
+          <h1 className="font-serif font-bold text-4xl md:text-5xl text-primary-green mb-6" data-oid="tjiafdh"> {/* Changed text color to primary-green */}
             Testimonials - Stories of Impact
           </h1>
           <p className="text-xl text-neutral-dark-gray leading-relaxed max-w-3xl mx-auto" data-oid="050ya5s">
@@ -92,13 +92,12 @@ export default function TestimonialsPage() {
           </p>
         </div>
 
-        {/* Submission CTA */}
-        <div className="text-center mb-16 animate-slide-up" data-oid="sqv9-qa">
-          <div className="bg-primary-green text-neutral-text-light rounded-lg p-8 max-w-2xl mx-auto" data-oid="ffmg86b">
-            <h3 className="font-serif font-bold text-2xl mb-4" data-oid="eclo3h:">
+        {/* Submission CTA (Top Call to Action) - Adjusted styling */}
+        <div className="text-center mb-16 animate-slide-up bg-[#c9e6db] text-[#365b36] rounded-lg p-8 max-w-2xl mx-auto" data-oid="sqv9-qa"> {/* Updated background and text colors, added padding and rounded corners */}
+          <h3 className="font-serif font-bold text-2xl mb-4 text-[#365b36]"> {/* Ensured heading text color matches section text color */}
               Share Your Story
             </h3>
-            <p className="text-lg mb-6 text-green-100" data-oid="72c9f3u">
+            <p className="text-lg mb-6 text-[#737373] leading-relaxed" data-oid="72c9f3u"> {/* Updated paragraph text color and added leading-relaxed */}
               Have you been impacted by #MonthlyEarthDay? We'd love to hear
               about your environmental journey and how monthly action has made a
               difference in your life.
@@ -107,12 +106,11 @@ export default function TestimonialsPage() {
               variant="secondary"
               size="lg"
               href="/contact"
-              className="bg-neutral-text-light text-primary-green hover:bg-gray-100" data-oid="7gmj1le">
+              className="bg-[#017d8c] hover:bg-[#016a77] text-white transition" data-oid="7gmj1le"> {/* Applied filled button classes */}
 
               Leave Your Testimonial!
             </Button>
           </div>
-        </div>
 
         {/* Testimonials Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16" data-oid=":knqlk4">
@@ -178,13 +176,13 @@ export default function TestimonialsPage() {
         </div>
       </section>
 
-        {/* Featured Success Story */}
-        <div className="bg-gradient-to-br from-primary-green to-primary-green-dark text-neutral-text-light rounded-lg p-8 mb-16 animate-slide-up" data-oid="giu_9v.">
+        {/* Featured Success Story - Adjusted background */}
+        <div className="bg-[#c9e6db] text-neutral-text-light rounded-lg p-8 mb-16 animate-slide-up" data-oid="giu_9v."> {/* Updated background color */}
           <div className="max-w-4xl mx-auto text-center" data-oid="gck5f-r">
-            <h3 className="font-serif font-bold text-2xl md:text-3xl mb-6" data-oid="zhnry49">
+            <h3 className="font-serif font-bold text-2xl md:text-3xl mb-6 text-[#365b36]"> {/* Changed heading text color */}
               Featured Success Story
             </h3>
-            <blockquote className="text-lg md:text-xl italic leading-relaxed mb-6" data-oid="rqpfaqd">
+            <blockquote className="text-lg md:text-xl italic leading-relaxed mb-6 text-[#737373]" data-oid="rqpfaqd"> {/* Changed quote text color */}
               "For over a year, ReFi Tulum has proudly honored Monthly Earth Day with hands-on 
               action—leading cleanups in the Unesco bioreserve of Sian Ka’an, in sacred cenotes 
               and throughout our city of Tulum , proving that regeneration begins with consistency, 
@@ -197,8 +195,8 @@ export default function TestimonialsPage() {
                 className="w-12 h-12 rounded-full" data-oid=".8or4x:" />
 
               <div className="text-left" data-oid="3bhqbs:">
-                <div className="font-semibold" data-oid="dr5f5eo">Sandra-Refi Tulum</div>
-                <div className="text-green-200 text-sm" data-oid=":yj109y">
+                <div className="font-semibold text-[#365b36]" data-oid="dr5f5eo">Sandra-Refi Tulum</div> {/* Changed author text color */}
+                <div className="text-[#737373] text-sm" data-oid=":yj109y"> {/* Changed location text color */}
                   Community Organizer, Tulum
                 </div>
               </div>
@@ -206,7 +204,7 @@ export default function TestimonialsPage() {
           </div>
         </div>
 
-        {/* Call to Action */}
+        {/* Call to Action (Bottom) - Adjusting button styles */}
         <div className="text-center" data-oid="his6zq0">
           <div className="bg-white rounded-lg p-8 shadow-sm animate-slide-up" data-oid="272.vm7">
             <h3 className="font-serif font-bold text-2xl text-neutral-text-dark mb-4" data-oid="qt3xq_j">
@@ -218,16 +216,30 @@ export default function TestimonialsPage() {
               could be next!
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center" data-oid="4i6bcy-">
-              <Button variant="primary" size="lg" href="/actions" data-oid="o_u2t-3">
-                View Actions
-              </Button>
-              <Button variant="outline" size="lg" href="/community" data-oid="iehapju">
-                Join Community
-              </Button>
+              {/* Button 1 - Matching outlined style */}
+               <Button
+            variant="outline"
+            size="lg"
+            href="/community"
+            className="border-[#365b36] text-[#365b36] hover:bg-[#365b36] hover:text-white transition"
+            data-oid="ex0ofaj"
+          >
+            Join Community
+          </Button>
+
+          <Button
+            variant="secondary"
+            size="lg"
+            href="/actions"
+            className="bg-[#017d8c] hover:bg-[#016a77] text-white transition"
+            data-oid="c9j-hao"
+          >
+            View Actons!
+          </Button>
             </div>
           </div>
         </div>
       </div>
-    </div>);
-
+    </div>
+  );
 }

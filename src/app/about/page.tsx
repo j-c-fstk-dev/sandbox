@@ -2,8 +2,9 @@ export default function AboutPage() {
   return (
     <div className="min-h-screen py-16 px-4" data-oid="r2-hw3m">
       <div className="max-w-4xl mx-auto" data-oid="tppf19w">
+        {/* Header */}
         <div className="text-center mb-16 animate-fade-in" data-oid="guun4f.">
-          <h1 className="font-serif font-bold text-4xl md:text-5xl text-neutral-text-dark mb-6" data-oid="lchrfa:">
+          <h1 className="font-serif font-bold text-4xl md:text-5xl text-primary-green mb-6" data-oid="lchrfa:"> {/* Applied primary-green color */}
             About Us - #MonthlyEarthDay
           </h1>
           <p className="text-xl text-neutral-dark-gray leading-relaxed" data-oid="0153.y:">
@@ -11,10 +12,9 @@ export default function AboutPage() {
           </p>
         </div>
 
-        {/* Main Content Section */}
-        <div className="prose animate-slide-up mb-16" data-oid="hgdz5b6">
-          <div className="bg-white rounded-lg p-20 shadow-sm" data-oid="qv2f2o6">
-            <h2 className="text-center" data-oid="oes5:qr">Our Mission</h2>
+        {/* Main Content Section - Adjusted styling */}
+        <div className="prose animate-slide-up mb-16 p-8 bg-white rounded-lg shadow-sm" data-oid="hgdz5b6"> {/* Added padding, background, rounded corners and shadow */}
+          <h2 className="text-center text-primary-green" data-oid="oes5:qr">Our Mission</h2> {/* Applied primary-green color */}
             <p data-oid="wqr:pf7">
   At #MonthlyEarthDay, we believe <strong>every day is an opportunity to protect and celebrate our planet</strong>.
   Founded by Nick, who works hard to make this world a better place, our movement
@@ -30,7 +30,7 @@ export default function AboutPage() {
 
 <hr className="my-8 border-t-2 border-gray-200 w-full max-w-lg mx-auto" />
 
-<h2 className="text-center" data-oid="4ey8.kr">Why Monthly Action Matters</h2>
+<h2 className="text-center text-primary-green" data-oid="4ey8.kr">Why Monthly Action Matters</h2> {/* Applied primary-green color */}
             <p data-oid="1n6aj29">
               Traditional Earth Day happens once a year, but environmental
               challenges require ongoing attention and action. By creating a
@@ -50,7 +50,7 @@ export default function AboutPage() {
 
             <hr className="my-8 border-t-2 border-gray-200 w-full max-w-lg mx-auto" />
 
-            <h2 className="text-center" data-oid="p:kned0">Our Approach</h2>
+            <h2 className="text-center text-primary-green" data-oid="p:kned0">Our Approach</h2> {/* Applied primary-green color */}
             <p data-oid=".4i-pzf">
               We focus on practical, accessible actions that anyone can
               participate in, regardless of their experience level or resources.
@@ -61,13 +61,13 @@ export default function AboutPage() {
               <li data-oid="n.v43io"><b>Be inclusive and accessible to all community members</b></li>
               <li data-oid="_-fgbk5"><b>Create measurable environmental impact</b></li>
               <li data-oid="-a:6qiw"><b>Build knowledge and awareness about environmental issues</b></li>
-              <li data-oid="1e3ll_-"><b>Strengthen local communities and global connections</b></li>
+              <li data-oid="-a:6qiw"><b>Strengthen local communities and global connections</b></li>
               <li data-oid="0t0g:9:"><b>Inspire long-term behavioral change</b></li>
             </ul>
 
             <hr className="my-8 border-t-2 border-gray-200 w-full max-w-lg mx-auto" />
 
-            <h2 className="text-center" data-oid="2epybim">Global Impact, Local Action</h2>
+            <h2 className="text-center text-primary-green" data-oid="2epybim">Global Impact, Local Action</h2> {/* Applied primary-green color */}
             <p data-oid="9w5gozw">
   While our movement is global, we believe the most powerful change happens at
   the local level. Each community adapts our monthly themes to
@@ -89,9 +89,9 @@ export default function AboutPage() {
           </div>
         </div>
 
-        {/* Founder Section */}
+        {/* Founder Section - Adjusted styling */}
         <div className="bg-white rounded-lg p-12 shadow-sm animate-slide-up" data-oid="np.wniz">
-          <h2 className="font-serif font-bold text-3xl text-neutral-text-dark mb-8 text-center" data-oid="azbkvj.">
+          <h2 className="font-serif font-bold text-3xl text-primary-green mb-8 text-center" data-oid="azbkvj."> {/* Applied primary-green color */}
             Meet Our Founder - Nick
           </h2>
 
@@ -101,23 +101,22 @@ export default function AboutPage() {
                 src="https://res.cloudinary.com/dr0weongo/image/upload/v1753077583/IMG-20250720-WA0013_myq2kv.jpg"
                 alt="Nick - Founder of #MonthlyEarthDay"
                 className="w-48 h-48 rounded-full object-cover shadow-md" data-oid="udn.p10" />
-
             </div>
 
             <div className="flex-1 prose" data-oid="nzcqq-c">
               <p data-oid="goi.gqj">
                 Born on <strong>Earth Day</strong>, our founder Nick has always felt a deep
-                connection to the planet. A lifelong environmentalist, 
-                Nick’s love for nature was sparked by childhood adventures 
-                in the wilderness, where he marveled at the beauty of wildlife 
+                connection to the planet. A lifelong environmentalist,
+                Nick’s love for nature was sparked by childhood adventures
+                in the wilderness, where he marveled at the beauty of wildlife
                 and untouched landscapes.
               </p>
 
               <p data-oid="x.wpry4">
-              His passion drives <strong>#MonthlyEarthDay’s</strong> vision to make environmental 
-              care a year-round commitment. Whether hiking through forests, 
-              fishing, observing local wildlife, or leading community cleanups, 
-              Nick inspires others to protect our planet with the same enthusiasm 
+              His passion drives <strong>#MonthlyEarthDay’s</strong> vision to make environmental
+              care a year-round commitment. Whether hiking through forests,
+              fishing, observing local wildlife, or leading community cleanups,
+              Nick inspires others to protect our planet with the same enthusiasm
               he’s carried since his first Earth Day.
               </p>
 
@@ -128,34 +127,37 @@ export default function AboutPage() {
               </p>
 
               <p data-oid="-.tqu4e">
-              <strong>His belief is simple: every step toward sustainability counts, and 
+              <strong>His belief is simple: every step toward sustainability counts, and
               together, we can create a thriving future for all living things.</strong>
               </p>
             </div>
           </div>
         </div>
 
-        {/* Call to Action */}
-        <div className="text-center mt-16" data-oid="jkc2god">
-          <div className="bg-primary-green text-neutral-text-light rounded-lg p-8 animate-slide-up" data-oid="jsrowgn">
-            <h3 className="font-serif font-bold text-2xl mb-4" data-oid="4yqgqdm">
+        {/* Call to Action - Adjusting styling to match Hero Section */}
+        <div className="text-center mt-16 bg-[#c9e6db] text-[#365b36] py-12 px-4 rounded-lg animate-slide-up" data-oid="jkc2god"> {/* Updated background and text colors, added padding and rounded corners */}
+          <h3 className="font-serif font-bold text-2xl mb-4 text-[#365b36]" data-oid="4yqgqdm"> {/* Ensured heading text color matches section text color */}
               Ready to Join the Movement?
             </h3>
-            <p className="text-lg mb-6 text-green-100" data-oid="j3e0.hu">
+            <p className="text-lg mb-6 text-[#737373] leading-relaxed max-w-xl mx-auto" data-oid="j3e0.hu"> {/* Updated paragraph text color and added max-width and auto margins for centering */}
               Discover how you can make a difference through consistent monthly
               environmental action
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center" data-oid="bbleedx">
-              <button className="bg-neutral-text-light text-primary-green px-6 py-3 rounded-full font-medium hover:bg-gray-100 transition-colors duration-200" data-oid="thov.tf">
-                <a href="/actions" data-oid="of9gmhy">View Actions</a>
-              </button>
-              <button className="border-2 border-neutral-text-light text-neutral-text-light px-6 py-3 rounded-full font-medium hover:bg-neutral-text-light hover:text-primary-green transition-colors duration-200" data-oid="hottcie">
-                <a href="/community" data-oid="4gg76gu">Join Community</a>
-              </button>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center mt-6" data-oid="bbleedx"> {/* Added top margin for spacing */}
+
+            {/* Button 1 - Matching outlined style */}
+            <button className="border-[#365b36] text-[#365b36] hover:bg-[#365b36] hover:text-white transition px-6 py-3 rounded-full font-medium" data-oid="thov.tf"> {/* Applied outlined button classes */}
+              <a href="/actions" data-oid="of9gmhy">View Actions</a>
+            </button>
+
+            {/* Button 2 - Matching filled style */}
+            <button className="bg-[#017d8c] hover:bg-[#016a77] text-white transition px-6 py-3 rounded-full font-medium" data-oid="hottcie"> {/* Applied filled button classes */}
+              <a href="/community" data-oid="4gg76gu">Join Community</a>
+            </button>
+
             </div>
           </div>
         </div>
-      </div>
-    </div>);
-
+     
+  );
 }

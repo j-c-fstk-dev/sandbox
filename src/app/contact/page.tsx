@@ -259,9 +259,9 @@ export default function ContactPage() {
                 </div>
 
                 <Button
-                  variant="primary"
+                  variant="secondary"
                   size="lg"
-                  className="w-full"
+                  className="bg-[#017d8c] hover:bg-[#016a77] text-white transition w-full"
                   disabled={submitStatus === "loading"}
                   data-oid="dir3djn"
                 >
@@ -290,11 +290,11 @@ export default function ContactPage() {
 
         {/* Call to Action */}
         <div className="mt-16 text-center" data-oid="-3qf4n.">
-          <div className="bg-gradient-to-r from-primary-green to-primary-green-dark text-neutral-text-light rounded-lg p-8" data-oid="fh35o3o">
-            <h3 className="font-serif font-bold text-2xl mb-4" data-oid="kiec4k3">
+          <div className="bg-[#c9e6db] rounded-lg p-8" data-oid="fh35o3o">
+            <h3 className="font-serif font-bold text-2xl mb-4 text-[#365b36]" data-oid="kiec4k3">
               Ready to Take Action?
             </h3>
-            <p className="text-lg mb-6 text-green-100" data-oid="3v3i3q9">
+            <p className="text-lg mb-6 text-[#365b36]" data-oid="3v3i3q9">
               Don't wait for the perfect moment. Join our next monthly action
               and start making a difference today.
             </p>
@@ -303,15 +303,15 @@ export default function ContactPage() {
                 variant="secondary"
                 size="lg"
                 href="/calendar"
-                className="bg-neutral-text-light text-primary-green hover:bg-gray-100" data-oid="eqe33n-">
+                className="bg-[#017d8c] hover:bg-[#016a77] text-white transition" data-oid="eqe33n-">
 
                 View Calendar
               </Button>
               <Button
-                variant="outline"
+                variant="primary"
                 size="lg"
                 href="/actions"
-                className="border-neutral-text-light text-neutral-text-light hover:bg-neutral-text-light hover:text-primary-green" data-oid="b5cj7so">
+                className="border-[#365b36] text-[#365b36] hover:bg-[#365b36] hover:text-white transition" data-oid="b5cj7so">
 
                 Explore Actions
               </Button>

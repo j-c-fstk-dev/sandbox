@@ -138,7 +138,7 @@ export default function ActionsPage() {
       <div className="max-w-6xl mx-auto" data-oid="_jgqoue">
         {/* Header */}
         <div className="text-center mb-12 animate-fade-in" data-oid="1vxsa01">
-          <h1 className="font-serif font-bold text-4xl md:text-5xl text-neutral-text-dark mb-6" data-oid="9.i2aaj">
+          <h1 className="font-serif font-bold text-4xl md:text-5xl text-primary-green mb-6" data-oid="9.i2aaj"> {/* Changed text color to primary-green */}
             List of #MonthlyEarthDay Actions
           </h1>
           <p className="text-xl text-neutral-dark-gray leading-relaxed max-w-3xl mx-auto" data-oid="y0v9mt8">
@@ -233,27 +233,29 @@ export default function ActionsPage() {
           </div>
         }
 
-        {/* Call to Action */}
-        <div className="mt-16 text-center" data-oid="-mtxw6r">
-          <div className="bg-primary-green text-neutral-text-light rounded-lg p-8 animate-slide-up" data-oid="9qj0vfz">
-            <h3 className="font-serif font-bold text-2xl mb-4" data-oid="fbbbcj5">
+        {/* Call to Action - Adjusting styling to match Hero Section */}
+        <div className="mt-16 text-center bg-[#c9e6db] text-[#365b36] py-12 px-4 rounded-lg animate-slide-up" data-oid="-mtxw6r"> {/* Updated background and text colors, added padding and rounded corners */}
+          <div className="max-w-xl mx-auto">
+            <h3 className="font-serif font-bold text-2xl mb-4 text-[#365b36]" data-oid="fbbbcj5"> {/* Ensured heading text color matches section text color */}
               Ready to Take Action?
             </h3>
-            <p className="text-lg mb-6 text-green-100" data-oid="06i3heo">
+            <p className="text-lg mb-6 text-[#737373] leading-relaxed" data-oid="06i3heo"> {/* Updated paragraph text color and added leading-relaxed */}
               Join our community and participate in monthly environmental
               actions that create real impact.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center" data-oid="jqdxjap">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center mt-6" data-oid="jqdxjap"> {/* Added top margin for spacing */}
+
+              {/* Button 1 - Matching outlined style */}
               <a
                 href="/calendar"
-                className="bg-neutral-text-light text-primary-green px-6 py-3 rounded-full font-medium hover:bg-gray-100 transition-colors duration-200" data-oid="v02rhgh">
-
+                className="border-2 border-[#365b36] text-[#365b36] hover:bg-[#365b36] hover:text-white transition px-6 py-3 rounded-full font-medium" data-oid="v02rhgh"> {/* Applied outlined button classes */}
                 View Calendar
               </a>
+
+              {/* Button 2 - Matching filled style */}
               <a
                 href="/community"
-                className="border-2 border-neutral-text-light text-neutral-text-light px-6 py-3 rounded-full font-medium hover:bg-neutral-text-light hover:text-primary-green transition-colors duration-200" data-oid="ep:zty_">
-
+                className="bg-[#017d8c] hover:bg-[#016a77] text-white transition px-6 py-3 rounded-full font-medium" data-oid="ep:zty_"> {/* Applied filled button classes */}
                 Join Community
               </a>
             </div>
@@ -261,5 +263,4 @@ export default function ActionsPage() {
         </div>
       </div>
     </div>);
-
 }

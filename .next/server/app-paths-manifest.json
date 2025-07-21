@@ -1,7 +1,7 @@
 {
-  "/page": "app/page.js",
-  "/blog/page": "app/blog/page.js",
-  "/blog/[slug]/page": "app/blog/[slug]/page.js",
-  "/blog/water-conservation-strategies-that-work/page": "app/blog/water-conservation-strategies-that-work/page.js",
-  "/calendar/page": "app/calendar/page.js"
+  "/community/page": "app/community/page.js",
+  "/testimonials/page": "app/testimonials/page.js",
+  "/contact/page": "app/contact/page.js",
+  "/calendar/page": "app/calendar/page.js",
+  "/about/page": "app/about/page.js"
 }
