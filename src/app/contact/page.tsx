@@ -9,6 +9,7 @@ export default function ContactPage() {
     email: "",
     message: ""
   });
+  const [submitStatus, setSubmitStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
 
   const handleInputChange = (
   e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) =>
@@ -20,13 +21,30 @@ export default function ContactPage() {
     }));
   };
 
-  const handleSubmit = (e?: React.FormEvent) => {
+  const handleSubmit = async (e?: React.FormEvent) => {
     e?.preventDefault();
-    // For static site, this would typically integrate with a form service
-    alert(
-      "Thank you for your message! Since this is a static demo, your message was not actually sent. In a real implementation, this would be connected to a contact form service."
-    );
-    setFormData({ name: "", email: "", message: "" });
+    setSubmitStatus("loading");
+
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(formData)
+      });
+
+      if (response.ok) {
+        setSubmitStatus("success");
+        setFormData({ name: "", email: "", message: "" });
+      } else {
+        setSubmitStatus("error");
+        console.error("Error sending email:", response.statusText);
+      }
+    } catch (error) {
+      setSubmitStatus("error");
+      console.error("Error sending email:", error);
+    }
   };
 
   return (
@@ -244,17 +262,26 @@ export default function ContactPage() {
                   variant="primary"
                   size="lg"
                   className="w-full"
-                  onClick={handleSubmit} data-oid="dir3djn">
-
-                  Send Message
+                  disabled={submitStatus === "loading"}
+                  data-oid="dir3djn"
+                >
+                  {submitStatus === "loading" ? "Sending..." :
+                  submitStatus === "success" ? "Sent!" : "Send Message"}
                 </Button>
+
+                {submitStatus === "success" && (
+                  <p className="text-center text-primary-green mt-4">Thank you for your message! We'll get back to you soon.</p>
+                )}
+
+                {submitStatus === "error" && (
+                  <p className="text-center text-red-500 mt-4">There was an error sending your message. Please try again later.</p>
+                )}
+
               </form>
 
               <div className="mt-6 p-4 bg-neutral-light-gray rounded-lg" data-oid="f5riud.">
                 <p className="text-sm text-neutral-dark-gray" data-oid="v9tdy3h">
-                  <strong data-oid="_y-d788">Note:</strong> This is a static demo site. In a real
-                  implementation, this form would be connected to a contact form
-                  service to actually send messages.
+                  <strong data-oid="_y-d788">Note:</strong> We'll review your message shortly.
                 </p>
               </div>
             </div>
