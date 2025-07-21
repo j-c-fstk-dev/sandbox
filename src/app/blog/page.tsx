@@ -17,7 +17,8 @@ export default function BlogPage() {
     image:
     "https://res.cloudinary.com/dr0weongo/image/upload/v1753021402/387295953_38790678-c397-4fa1-ae4c-31916d952b5f_fx4jf4.jpg", // Updated image URL
     tags: ["sustainability", "carbon-footprint", "lifestyle"],
-    slug: "reduce-carbon-footprint"
+    slug: "reduce-carbon-footprint",
+    author: "Nick"
   },
   {
     title: "The Power of Community Action",
@@ -27,7 +28,8 @@ export default function BlogPage() {
     image:
     "https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=400&h=250&fit=crop",
     tags: ["community", "action", "impact"],
-    slug: "power-of-community-action"
+    slug: "power-of-community-action",
+    author: "Nick"
   },
   {
     title: "Plastic-Free Living: A Beginner's Guide",
@@ -37,7 +39,8 @@ export default function BlogPage() {
     image:
     "https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?w=400&h=250&fit=crop",
     tags: ["plastic-free", "waste-reduction", "beginner"],
-    slug: "plastic-free-living-guide"
+    slug: "plastic-free-living-guide",
+    author: "Nick"
   },
   {
     title: "Urban Gardening for Environmental Impact",
@@ -47,7 +50,8 @@ export default function BlogPage() {
     image:
     "https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=400&h=250&fit=crop",
     tags: ["gardening", "urban", "biodiversity", "food-security"],
-    slug: "urban-gardening-impact"
+    slug: "urban-gardening-impact",
+    author: "Nick"
   },
   {
     title: "Renewable Energy: Making the Switch at Home",
@@ -57,7 +61,8 @@ export default function BlogPage() {
     image:
     "https://images.unsplash.com/photo-1509391366360-2e959784a276?w=400&h=250&fit=crop",
     tags: ["renewable-energy", "solar", "home-improvement"],
-    slug: "renewable-energy-home-switch"
+    slug: "renewable-energy-home-switch",
+    author: "Nick"
   },
   {
     title: "Water Conservation Strategies That Work",
@@ -67,7 +72,8 @@ export default function BlogPage() {
     image:
     "https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=400&h=250&fit=crop",
     tags: ["water-conservation", "sustainability", "home-tips"],
-    slug: "water-conservation-strategies"
+    slug: "water-conservation-strategies",
+    author: "Nick"
   },
   {
     title: "The Science Behind Climate Action",
@@ -77,7 +83,8 @@ export default function BlogPage() {
     image:
     "https://images.unsplash.com/photo-1611273426858-450d8e3c9fce?w=400&h=250&fit=crop",
     tags: ["climate-science", "research", "education"],
-    slug: "science-behind-climate-action"
+    slug: "science-behind-climate-action",
+    author: "Nick"
   },
   {
     title: "Building Sustainable Communities",
@@ -87,7 +94,8 @@ export default function BlogPage() {
     image:
     "https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?w=400&h=250&fit=crop",
     tags: ["community", "sustainability", "neighborhood"],
-    slug: "building-sustainable-communities"
+    slug: "building-sustainable-communities",
+    author: "Nick"
   },
   {
     title: "Zero Waste Kitchen: Getting Started",
@@ -97,7 +105,8 @@ export default function BlogPage() {
     image:
     "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=400&h=250&fit=crop",
     tags: ["zero-waste", "kitchen", "lifestyle", "beginner"],
-    slug: "zero-waste-kitchen-guide"
+    slug: "zero-waste-kitchen-guide",
+    author: "Nick"
   }];
 
 
