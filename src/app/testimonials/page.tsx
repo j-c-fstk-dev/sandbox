@@ -10,6 +10,16 @@ import { Users, Globe, TreePine, Recycle } from 'lucide-react';
 export default function TestimonialsPage() {
   // Sample testimonials data
   const testimonials = [
+    {
+    text: "We try better was founded to help people recognize their power—that everyone can make a difference in our world’s challenges. Small actions add up, rewiring your mindset to not only boost happiness through purpose, but also uncover new ways to ‘try better.’ Monthly Earth Day has been core to this mission from the start. By inspiring people to act for the planet monthly—not just yearly—it normalizes sustainability, turning occasional gestures into daily habits. This is the vital step toward a better world.",
+    author: "Donny Jerry",
+    image: "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=60&h=60&fit=crop&crop=face" // Placeholder image
+  },
+  {
+    text: "For over a year, ReFi Tulum has proudly honored Monthly Earth Day with hands-on action—leading cleanups in the Unesco bioreserve of Sian Ka’an, in sacred cenotes and throughout our city of Tulum , proving that regeneration begins with consistency, community, and care for the Earth, month by month and day by day",
+    author: "Sandra - ReFI Tulum",
+    image: "https://pbs.twimg.com/profile_images/1816460170974617600/q6qwW4OB_400x400.jpg" // Placeholder image
+  },
   {
     text: "Participating in #MonthlyEarthDay has transformed how I think about environmental action. It's not about perfection, it's about consistent, meaningful steps. The monthly rhythm keeps me motivated and connected to a global community of changemakers.",
     author: "Maria Rodriguez",
@@ -21,16 +31,6 @@ export default function TestimonialsPage() {
     author: "David Kim",
     image:
     "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=60&h=60&fit=crop&crop=face"
-  },
-  {
-    text: "I love how #MonthlyEarthDay makes environmental action accessible. Every month brings new opportunities to make a difference, and the community support makes it feel achievable rather than overwhelming.",
-    author: "Emma Thompson"
-  },
-  {
-    text: "As a teacher, I've incorporated #MonthlyEarthDay into our classroom curriculum. My students are now environmental leaders in their families and neighborhoods. The impact extends far beyond the classroom.",
-    author: "Sarah Chen",
-    image:
-    "https://images.unsplash.com/photo-1494790108755-2616b9e0e4d4?w=60&h=60&fit=crop&crop=face"
   },
   {
     text: "The monthly actions have helped our small business become carbon neutral. From energy audits to waste reduction, each month's focus gave us concrete steps to improve our environmental impact while saving money.",
@@ -51,18 +51,10 @@ export default function TestimonialsPage() {
     "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=60&h=60&fit=crop&crop=face"
   },
   {
-    text: "What I appreciate most is how this movement meets people where they are. Whether you're a beginner or an experienced environmentalist, there's always a meaningful way to contribute and grow.",
-    author: "Jennifer Davis"
-  },
-  {
     text: "Our family has made environmental stewardship a core value through #MonthlyEarthDay. My children now think critically about consumption, waste, and their impact on the planet. It's shaping the next generation.",
     author: "Robert Wilson",
     image:
     "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=60&h=60&fit=crop&crop=face"
-  },
-  {
-    text: "The community connections I've made through environmental action have enriched my life beyond measure. We've become friends, neighbors, and collaborators in creating positive change.",
-    author: "Amanda Foster"
   },
   {
     text: "As someone who works in corporate sustainability, I've seen how #MonthlyEarthDay creates grassroots pressure for policy change. Individual actions aggregate into powerful collective voice for environmental protection.",
@@ -71,29 +63,16 @@ export default function TestimonialsPage() {
     "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=60&h=60&fit=crop&crop=face"
   },
   {
-    text: "The monthly structure has helped me build lasting environmental habits. What started as one-day actions have become integrated into my daily life. Sustainable living is now second nature.",
-    author: "Rachel Green"
-  },
-  {
     text: "I've learned that environmental action doesn't have to be sacrifice—it can be joyful, social, and deeply fulfilling. #MonthlyEarthDay has shown me that caring for the planet is caring for community.",
     author: "Daniel Lee",
     image:
     "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=60&h=60&fit=crop&crop=face"
   },
   {
-    text: "The ripple effects have been amazing. Our monthly actions inspired our city council to adopt stronger environmental policies. Local action really can create systemic change.",
-    author: "Nicole Taylor"
-  },
-  {
     text: "From composting to solar panels to community gardens, #MonthlyEarthDay has guided my journey toward sustainable living. Each month builds on the last, creating momentum for lasting change.",
     author: "Christopher Adams",
     image:
     "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=60&h=60&fit=crop&crop=face"
-  },
-  {
-    text: "We try better was founded to help people recognize their power—that everyone can make a difference in our world’s challenges. Small actions add up, rewiring your mindset to not only boost happiness through purpose, but also uncover new ways to ‘try better.’ Monthly Earth Day has been core to this mission from the start. By inspiring people to act for the planet monthly—not just yearly—it normalizes sustainability, turning occasional gestures into daily habits. This is the vital step toward a better world.",
-    author: "Donny Jerry",
-    image: "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=60&h=60&fit=crop&crop=face" // Placeholder image
   }
   ];
 
