@@ -247,7 +247,7 @@ return (
               <div className="text-4xl font-bold text-neutral-dark-gray mb-2">
                 15,998 lb
               </div>
-              <div className="text-neutral-dark-gray text-center text-lg">Waste Diverted</div>
+              <div className="text-neutral-dark-gray text-center text-lg">Litter Cleaned Up</div>
             </div>
           </div>
         </div>
