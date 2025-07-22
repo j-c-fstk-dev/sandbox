@@ -4,6 +4,33 @@ import Link from 'next/link';
 
 // Sample blog post data - in a real app, this would come from a CMS or database
 const blogPosts = {
+  // NEW POST: Why We Should Celebrate Earth Day Every Month
+  "why-celebrate-earth-day-every-month": {
+    title: "Why We Should Celebrate Earth Day Every Month: A Call for Lasting Change",
+    author: "Monthly Earth Day Initiative", // You can customize the author name
+    date: "July 22, 2025", // Current date
+    image:
+      "https://pbs.twimg.com/media/Gr0B5SuWYAAxctu?format=jpg&name=medium", // Your provided image URL
+    tags: ["Earth Day", "sustainability", "climate action", "community"],
+    content: `
+            <p>Earth Day, celebrated annually on April 22, is a powerful reminder to honor and protect our planet. But one day a year isn’t enough to address the urgent environmental challenges we face—climate change, deforestation, plastic pollution, and more demand consistent action. Imagine the impact if we dedicated one day every month to Earth Day, fostering a global movement of care and commitment. Here’s why a monthly Earth Day could transform our relationship with the planet and drive meaningful change, explored through four key benefits: consistent action, community momentum, education and awareness, and personal growth.</p>
+            <h3>1. Consistent Action: Building Habits for a Healthier Planet</h3>
+            <p>Tackling environmental issues requires more than a single day of enthusiasm. A monthly Earth Day would encourage regular, actionable steps that add up to significant impact. Imagine millions of people worldwide committing to one eco-friendly action each month—whether it’s reducing single-use plastics, composting food waste, or supporting local conservation efforts. These small, repeated efforts build habits that become second nature, creating a ripple effect of positive change.</p>
+            <p>For example, if every household pledged to go car-free for one day each month, the reduction in carbon emissions could be substantial over time. According to the EPA, a typical passenger vehicle emits about 4.6 metric tons of CO₂ annually. Monthly car-free days could cut this significantly, especially if paired with public transit or biking. By making sustainability a regular practice, monthly Earth Days ensure we’re not just celebrating our planet but actively protecting it year-round.</p>
+            <h3>2. Community Momentum: Uniting for Collective Impact</h3>
+            <p>A monthly Earth Day would supercharge community engagement, turning local efforts into a sustained movement. Picture neighborhoods coming together each month for cleanups, tree-planting drives, or workshops on sustainable living. These events would foster a sense of shared purpose, strengthen community bonds, and inspire ongoing projects like urban gardens, renewable energy initiatives, or plastic-free campaigns.</p>
+            <p>Communities that act together amplify their impact. For instance, a single cleanup can remove tons of litter—Keep America Beautiful reports that their volunteers collected over 20 million pounds of trash in 2023 alone. Monthly efforts could multiply this, while also encouraging local governments and businesses to prioritize green policies. By rallying regularly, communities would build unstoppable momentum, transforming cities and towns into hubs of environmental innovation.</p>
+            <h3>3. Education and Awareness: Learning for a Greener Future</h3>
+            <p>Knowledge is power, and monthly Earth Days would provide ongoing opportunities to learn about pressing environmental issues. Each month could focus on a specific theme—ocean conservation, renewable energy, biodiversity, or air quality—through workshops, webinars, school programs, or public campaigns. This consistent education would deepen our understanding and inspire creative solutions.</p>
+            <p>For example, a month dedicated to ocean health could highlight the impact of plastic pollution (8 million metric tons of plastic enter the oceans annually, per the Ocean Conservancy) and teach practical steps like reducing microplastics. By keeping environmental topics in the spotlight, monthly Earth Days would empower individuals, schools, and organizations to stay informed and act with purpose, fostering a culture of curiosity and accountability.</p>
+            <h3>4. Personal Growth: Embracing a Sustainable Lifestyle</h3>
+            <p>Monthly Earth Days would also nurture personal growth, helping individuals build eco-friendly habits that feel achievable and rewarding. Each month could introduce a new challenge—going meatless for a day, switching to reusable bags, or planting a native garden. These small steps encourage self-reflection and growth, making sustainability a meaningful part of daily life.</p>
+            <p>Research shows that habit formation takes repetition—on average, 66 days to solidify a new behavior, according to a 2009 study in the European Journal of Social Psychology. Monthly challenges provide the perfect rhythm to try, learn, and improve, turning eco-conscious choices into second nature. Whether it’s mastering zero-waste cooking or advocating for local green policies, these efforts foster a sense of empowerment and connection to the planet, enriching our lives while protecting the Earth.</p>
+            <h3>A Call to Action: Make Every Month Earth Month</h3>
+            <p>A monthly Earth Day isn’t just a concept—it’s a pathway to lasting change. By committing to consistent action, we build habits that reduce our environmental footprint. Through community momentum, we create networks of passionate changemakers. With ongoing education and awareness, we equip ourselves with the knowledge to innovate. And through personal growth, we transform our lives into models of sustainability.</p>
+            <p>Let’s make this vision a reality. Start in your own community—organize a monthly cleanup, host a workshop, or challenge yourself to one new green habit. Share your ideas and progress with #MonthlyEarthDay to inspire others. Together, we can turn one day of celebration into a year-round movement for a healthier, thriving planet. What’s your first step for the next Earth Day? Let’s make every month count!</p>
+        `
+  },
   "reduce-carbon-footprint": {
     title: "10 Simple Ways to Reduce Your Carbon Footprint",
     author: "Sarah Green",
@@ -99,6 +126,9 @@ const blogPosts = {
 
             <h3>Focus on Local Issues</h3>
             <p>Identify environmental challenges specific to your community—whether it's air quality, water conservation, waste reduction, or green space preservation. Local issues create immediate, visible impact that motivates continued engagement.</p>
+
+            <h3>Make it Accessible</h3>
+            <p>Ensure that community environmental actions are inclusive and accessible to people of all ages, abilities, and economic backgrounds. The most successful initiatives are those that welcome everyone.</p>
 
             <h3>Make it Accessible</h3>
             <p>Ensure that community environmental actions are inclusive and accessible to people of all ages, abilities, and economic backgrounds. The most successful initiatives are those that welcome everyone.</p>
@@ -223,28 +253,32 @@ const blogPosts = {
   }
 };
 
+// Define the order of the blog posts for navigation.
+// IMPORTANT: Add "why-celebrate-earth-day-every-month" to your desired position.
+const blogPostSlugsOrder = [
+  "why-celebrate-earth-day-every-month", // New post as the first in order
+  "reduce-carbon-footprint",
+  "power-of-community-action",
+  "plastic-free-living-guide"
+];
+
+
 // Interface para tipagem das props do componente de página
 interface BlogPostPageProps {
   params: {
     slug: string;
   };
 }
+
 export default function BlogPostPage({ params }: BlogPostPageProps) {
   const post = blogPosts[params.slug as keyof typeof blogPosts];
 
-  // Define the order of the three specific posts
-  const featuredPostSlugs = [
-    "reduce-carbon-footprint",
-    "power-of-community-action",
-    "plastic-free-living-guide"
-  ];
+  // Find the index of the current post in the ordered list
+  const currentPostIndex = blogPostSlugsOrder.indexOf(params.slug);
 
-  // Find the index of the current post in the featured list
-  const currentPostIndex = featuredPostSlugs.indexOf(params.slug);
-
-  // Determine the previous and next post slugs
-  const prevPostSlug = currentPostIndex > 0 ? featuredPostSlugs[currentPostIndex - 1] : null;
-  const nextPostSlug = currentPostIndex < featuredPostSlugs.length - 1 ? featuredPostSlugs[currentPostIndex + 1] : null;
+  // Determine the previous and next post slugs for navigation
+  const prevPostSlug = currentPostIndex > 0 ? blogPostSlugsOrder[currentPostIndex - 1] : null;
+  const nextPostSlug = currentPostIndex < blogPostSlugsOrder.length - 1 ? blogPostSlugsOrder[currentPostIndex + 1] : null;
 
   if (!post) {
     notFound();
@@ -304,12 +338,12 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
             </Link>
           )}
            <div className="mt-8 text-center" data-oid="bqix1so">
-               <a
+               <Link
                  href="/blog"
                  className="inline-flex items-center text-primary-green hover:text-primary-green-dark font-medium transition-colors duration-200" data-oid="u2j7az:">
 
                  ← Back to Blog
-               </a>
+               </Link>
            </div>
         </div>
       </article>

@@ -4,6 +4,7 @@ import Image from 'next/image';
 
 interface ImageCarouselProps {
  images: string[];
+ preview?: boolean;
 }
 
 const ImageCarousel: React.FC<ImageCarouselProps> = ({ images }) => {

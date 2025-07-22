@@ -25,8 +25,16 @@ const nextConfig = {
         port: '',
         pathname: '**',
       },
-      // Adicione outros domínios aqui se você usar imagens de outras fontes no futuro
+      { // Adicionado como um novo objeto dentro de remotePatterns
+        protocol: 'https',
+        hostname: 'unavatar.io',
+        port: '',
+        pathname: '**', // Permite qualquer caminho em unavatar.io. Pode ser mais específico se preferir (ex: '/twitter/**')
+      },
+      // Adicione outros padrões remotos aqui se você usar imagens de outras fontes no futuro
     ],
+    // A propriedade 'domains' foi removida, pois 'remotePatterns' é a forma recomendada
+    // e mais flexível de configurar domínios de imagem externos no Next.js 13+.
   },
   // --- FIM DA NOVA SEÇÃO DE IMAGENS ---
 };

@@ -1,49 +1,58 @@
+// src/app/blog/page.tsx
 "use client";
 
 import { useState } from "react";
-import BlogPostCard from "@/components/BlogPostCard";
+import BlogPostCard from "@/components/BlogPostCard"; // Certifique-se de que este componente existe e está correto
 
 export default function BlogPage() {
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedTag, setSelectedTag] = useState("");
 
-  // Sample blog posts data - Only the first three posts
+  // Sample blog posts data - AGORA COM TODOS OS POSTS INCLUÍDOS
   const blogPosts = [
-  {
-    title: "10 Simple Ways to Reduce Your Carbon Footprint",
-    excerpt:
-    "Discover practical daily actions that can make a significant environmental impact when adopted by communities worldwide.",
-    date: "December 15, 2024",
-    image:
-    "https://res.cloudinary.com/dr0weongo/image/upload/v1753021402/387295953_38790678-c397-4fa1-ae4c-31916d952b5f_fx4jf4.jpg", // Updated image URL
-    tags: ["sustainability", "carbon-footprint", "lifestyle"],
-    slug: "reduce-carbon-footprint",
-    author: "Nick"
-  },
-  {
-    title: "The Power of Community Action",
-    excerpt:
-    "How local environmental initiatives are creating global change, one neighborhood at a time.",
-    date: "December 10, 2024",
-    image:
-    "https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=400&h=250&fit=crop",
-    tags: ["community", "action", "impact"],
-    slug: "power-of-community-action",
-    author: "Nick"
-  },
-  {
-    title: "Plastic-Free Living: A Beginner's Guide",
-    excerpt:
-    "Start your journey towards reducing plastic waste with these easy-to-implement strategies.",
-    date: "December 5, 2024",
-    image:
-    "https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?w=400&h=250&fit=crop",
-    tags: ["plastic-free", "waste-reduction", "beginner"],
-    slug: "plastic-free-living-guide",
-    author: "Nick"
-  }
+    {
+      title: "Why We Should Celebrate Earth Day Every Month: A Call for Lasting Change",
+      excerpt: "Earth Day, celebrated annually on April 22, is a powerful reminder to honor and protect our planet. But one day a year isn’t enough to address the urgent environmental challenges we face...",
+      date: "July 22, 2025",
+      image: "https://pbs.twimg.com/media/Gr0B5SuWYAAxctu?format=jpg&name=medium",
+      tags: ["Earth Day", "sustainability", "climate action", "community"],
+      slug: "why-celebrate-earth-day-every-month",
+      author: "Monthly Earth Day Initiative" // Autor do novo post
+    },
+    {
+      title: "10 Simple Ways to Reduce Your Carbon Footprint",
+      excerpt:
+        "Discover practical daily actions that can make a significant environmental impact when adopted by communities worldwide.",
+      date: "December 15, 2024",
+      image:
+        "https://res.cloudinary.com/dr0weongo/image/upload/v1753021402/387295953_38790678-c397-4fa1-ae4c-31916d952b5f_fx4jf4.jpg",
+      tags: ["sustainability", "carbon-footprint", "lifestyle"],
+      slug: "reduce-carbon-footprint",
+      author: "Sarah Green" // Ajustado o autor para consistência
+    },
+    {
+      title: "The Power of Community Action",
+      excerpt:
+        "How local environmental initiatives are creating global change, one neighborhood at a time.",
+      date: "December 10, 2024",
+      image:
+        "https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=400&h=250&fit=crop",
+      tags: ["community", "action", "impact"],
+      slug: "power-of-community-action",
+      author: "David Kim" // Ajustado o autor para consistência
+    },
+    {
+      title: "Plastic-Free Living: A Beginner's Guide",
+      excerpt:
+        "Start your journey towards reducing plastic waste with these easy-to-implement strategies.",
+      date: "July 21, 2024", // Data ajustada para consistência
+      image:
+        "https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?w=400&h=250&fit=crop",
+      tags: ["plastic-free", "waste-reduction", "beginner"],
+      slug: "plastic-free-living-guide",
+      author: "Your Name Here" // Ajustado o autor para consistência
+    }
   ];
-
 
   // Get all unique tags
   const allTags = Array.from(
@@ -53,9 +62,9 @@ export default function BlogPage() {
   // Filter posts based on search term and selected tag
   const filteredPosts = blogPosts.filter((post) => {
     const matchesSearch =
-    searchTerm === "" ||
-    post.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-    post.excerpt.toLowerCase().includes(searchTerm.toLowerCase());
+      searchTerm === "" ||
+      post.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      post.excerpt.toLowerCase().includes(searchTerm.toLowerCase());
 
     const matchesTag = selectedTag === "" || post.tags.includes(selectedTag);
 
@@ -89,7 +98,7 @@ export default function BlogPage() {
 
             </div>
 
-            {/* Tag Filter - Only show tags for the 3 posts */}
+            {/* Tag Filter */}
             <div className="flex flex-wrap gap-2 items-center" data-oid="la5zb68">
               <span className="text-sm font-medium text-neutral-dark-gray whitespace-nowrap" data-oid=".bnxm5-">
                 Filter by:
@@ -97,16 +106,13 @@ export default function BlogPage() {
               <button
                 onClick={() => setSelectedTag("")}
                 className={`tag ${selectedTag === "" ? "tag-active" : "tag-inactive"}`} data-oid="ioy3j1j">
-
                 All
               </button>
-              {/* Ensure allTags is generated only from the 3 posts */}
-              {Array.from(new Set(blogPosts.flatMap(post => post.tags))).sort().map((tag) =>
-              <button
-                key={tag}
-                onClick={() => setSelectedTag(tag === selectedTag ? "" : tag)}
-                className={`tag ${selectedTag === tag ? "tag-active" : "tag-inactive"}`} data-oid="acbh.8k">
-
+              {allTags.map((tag) =>
+                <button
+                  key={tag}
+                  onClick={() => setSelectedTag(tag === selectedTag ? "" : tag)}
+                  className={`tag ${selectedTag === tag ? "tag-active" : "tag-inactive"}`} data-oid="acbh.8k">
                   {tag}
                 </button>
               )}
@@ -114,10 +120,9 @@ export default function BlogPage() {
 
             {/* Clear Filter Button */}
             {selectedTag &&
-            <button
-              onClick={() => setSelectedTag("")}
-              className="text-sm text-primary-green hover:text-primary-green-dark font-medium" data-oid="-mt7:x.">
-
+              <button
+                onClick={() => setSelectedTag("")}
+                className="text-sm text-primary-green hover:text-primary-green-dark font-medium" data-oid="-mt7:x.">
                 Clear Filter
               </button>
             }
@@ -135,13 +140,13 @@ export default function BlogPage() {
 
         {/* Blog Posts Grid */}
         {filteredPosts.length > 0 ?
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" data-oid="7v-vh24">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" data-oid="7v-vh24">
             {filteredPosts.map((post, index) =>
-          <BlogPostCard key={post.slug} {...post} data-oid="rc1n6a4" />
-          )}
+              <BlogPostCard key={post.slug} {...post} data-oid="rc1n6a4" />
+            )}
           </div> :
 
-        <div className="text-center py-16" data-oid="8sn3uo2">
+          <div className="text-center py-16" data-oid="8sn3uo2">
             <div className="text-6xl mb-4" data-oid="htunv:u">🔍</div>
             <h3 className="font-serif font-bold text-2xl text-neutral-text-dark mb-4" data-oid="s7zrm00">
               No posts found
@@ -150,17 +155,16 @@ export default function BlogPage() {
               Try adjusting your search terms or clearing the filters.
             </p>
             <button
-            onClick={() => {
-              setSearchTerm("");
-              setSelectedTag("");
-            }}
-            className="bg-primary-green text-neutral-text-light px-6 py-3 rounded-full font-medium hover:bg-primary-green-dark transition-colors duration-200" data-oid=".ao1sa1">
-
+              onClick={() => {
+                setSearchTerm("");
+                setSelectedTag("");
+              }}
+              className="bg-primary-green text-neutral-text-light px-6 py-3 rounded-full font-medium hover:bg-primary-green-dark transition-colors duration-200" data-oid=".ao1sa1">
               Clear All Filters
             </button>
           </div>
         }
       </div>
-    </div>);
-
+    </div>
+  );
 }
