@@ -8,7 +8,7 @@ const blogPost = {
   author: "Monthly Earth Day Initiative", // You can customize the author name
   date: "July 22, 2025", // Current date
   image:
-    "https://pbs.twimg.com/media/Gr0B5SuWYAAxctu?format=jpg&name=medium", // Your provided image URL
+    "https://res.cloudinary.com/dr0weongo/image/upload/v1752847674/20250718_105015_j7pzxn.jpg", // Your provided image URL
   tags: ["Earth Day", "sustainability", "climate action", "community"],
   slug: "why-celebrate-earth-day-every-month", // Match the slug from blogPosts in [slug]/page.tsx
   content: `

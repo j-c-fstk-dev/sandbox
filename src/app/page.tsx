@@ -46,7 +46,7 @@ export default function Page() {
       excerpt:
         "Earth Day, celebrated annually on April 22, is a powerful reminder to honor and protect our planet. But one day a year isn’t enough to address the urgent environmental challenges we face...",
       date: "July 22, 2025",
-      image: "https://pbs.twimg.com/media/Gr0B5SuWYAAxctu?format=jpg&name=medium",
+      image: "https://res.cloudinary.com/dr0weongo/image/upload/v1752847674/20250718_105015_j7pzxn.jpg",
       tags: ["Earth Day", "sustainability", "climate action", "community"],
       slug: "why-celebrate-earth-day-every-month",
       author: "Monthly Earth Day Initiative"
