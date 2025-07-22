@@ -13,12 +13,12 @@ export default function TestimonialsPage() {
     {
     text: "We try better was founded to help people recognize their power—that everyone can make a difference in our world’s challenges. Small actions add up, rewiring your mindset to not only boost happiness through purpose, but also uncover new ways to ‘try better.’ Monthly Earth Day has been core to this mission from the start. By inspiring people to act for the planet monthly—not just yearly—it normalizes sustainability, turning occasional gestures into daily habits. This is the vital step toward a better world.",
     author: "Donny Jerry",
-    image: "https://pbs.twimg.com/profile_images/1902882582154395649/6p4va-Ps_400x400.jpg" // Placeholder image
+    image: "https://res.cloudinary.com/dr0weongo/image/upload/v1753195050/IMG-20250722-WA0011_gtb3ck.jpg" // Placeholder image
   },
   {
     text: "For over a year, ReFi Tulum has proudly honored Monthly Earth Day with hands-on action—leading cleanups in the Unesco bioreserve of Sian Ka’an, in sacred cenotes and throughout our city of Tulum , proving that regeneration begins with consistency, community, and care for the Earth, month by month and day by day",
     author: "Sandra - ReFI Tulum",
-    image: "https://pbs.twimg.com/profile_images/1816460170974617600/q6qwW4OB_400x400.jpg" // Placeholder image
+    image: "https://res.cloudinary.com/dr0weongo/image/upload/v1753196769/q6qwW4OB_400x400_hng0cg.jpg" // Placeholder image
   },
   {
     text: "Participating in #MonthlyEarthDay has transformed how I think about environmental action. It's not about perfection, it's about consistent, meaningful steps. The monthly rhythm keeps me motivated and connected to a global community of changemakers.",
@@ -190,7 +190,7 @@ export default function TestimonialsPage() {
             </blockquote>
             <div className="flex items-center justify-center space-x-4" data-oid="edqmu3_">
               <img
-                src="https://pbs.twimg.com/profile_images/1816460170974617600/q6qwW4OB_400x400.jpg"
+                src="https://res.cloudinary.com/dr0weongo/image/upload/v1753196769/q6qwW4OB_400x400_hng0cg.jpg"
                 alt="Sandra-Refi Tulum"
                 className="w-12 h-12 rounded-full" data-oid=".8or4x:" />
 
