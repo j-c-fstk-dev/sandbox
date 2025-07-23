@@ -153,7 +153,7 @@ const PostDetailModal: React.FC<PostDetailModalProps> = ({ post, onClose }) => {
 
           {renderModalContent()}
 
-          <div className="flex items-center space-x-6 pt-3 border-t border-neutral-medium-gray mt-6">
+          {/*<div className="flex items-center space-x-6 pt-3 border-t border-neutral-medium-gray mt-6">
             <div className="flex items-center space-x-1 text-neutral-dark-gray">
               <span className="text-lg">❤️</span>
               <span className="text-sm">{post.likes || 0}</span>
@@ -162,7 +162,7 @@ const PostDetailModal: React.FC<PostDetailModalProps> = ({ post, onClose }) => {
               <span className="text-lg">💬</span>
               <span className="text-sm">{post.comments || 0}</span>
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
     </div>

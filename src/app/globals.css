@@ -77,77 +77,92 @@ body {
   .prose blockquote {
     @apply border-l-4 border-primary-green pl-4 italic text-neutral-dark-gray my-6;
   }
+
+  /*
+    * NOVOS ESTILOS PARA O CONTÊINER DO EMBED DO X
+    * Este é o contêiner '.tweet-container' que você adicionou no TweetEmbed.tsx
+    * Ele controla a rolagem do *seu* elemento.
+  */
+  .tweet-container {
+      max-height: 600px; /* Defina uma altura máxima que se adeque ao seu design */
+      overflow-y: auto; /* Habilita a rolagem vertical quando o conteúdo exceder a altura máxima */
+      width: 100%; /* Garante que o contêiner ocupe a largura disponível */
+      border: 1px solid #e1e8ed; /* Opcional: Adiciona uma borda para visualização */
+      border-radius: 8px; /* Opcional: para combinar com o design do Twitter */
+      box-sizing: border-box; /* Garante que padding e border sejam incluídos na largura/altura */
+      padding: 10px; /* Opcional: Espaçamento interno */
+  }
+
+  /* * Estilos para o blockquote e iframe DENTRO do seu '.tweet-container'
+    * O objetivo é fazer o iframe se expandir totalmente dentro do .tweet-container,
+    * deixando o .tweet-container ser responsável pela rolagem.
+    * Usamos !important para garantir que os estilos do Twitter sejam sobrescritos.
+  */
+  .tweet-container .twitter-tweet {
+      margin: 0 auto !important; /* Centraliza o tweet dentro do contêiner */
+      max-width: 100% !important; /* Garante que não exceda a largura do contêiner */
+      width: 100% !important; /* Ocupa toda a largura disponível */
+      height: auto !important; /* Permite que a altura se ajuste automaticamente */
+      min-height: unset !important; /* Remove min-height que pode restringir */
+      overflow: visible !important; /* Garante que o conteúdo que exceda a altura/largura seja visível */
+      display: block !important;
+      box-sizing: border-box !important;
+      border: none !important; /* Remove bordas que o Twitter possa adicionar */
+      padding: 0 !important; /* Remove padding que o Twitter possa adicionar */
+  }
+
+  /* O iframe real gerado pelo script do Twitter */
+  .tweet-container .twitter-tweet-rendered,
+  .tweet-container div[data-twitter-extracted-i] {
+      height: auto !important; /* ESSENCIAL: Altura automática */
+      max-height: none !important; /* ESSENCIAL: Remove limites de altura máxima */
+      overflow: visible !important; /* ESSENCIAL: Garante que o conteúdo interno não seja cortado */
+      width: 100% !important;
+      min-width: unset !important;
+      box-sizing: border-box !important;
+      position: relative !important;
+      display: block !important;
+  }
+
+  .tweet-container .twitter-tweet-rendered iframe,
+  .tweet-container div[data-twitter-extracted-i] iframe {
+      height: auto !important; /* MUITO ESSENCIAL: Permite que o iframe se expanda */
+      max-height: none !important; /* MUITO ESSENCIAL: Remove limite de altura no iframe */
+      overflow: visible !important; /* MUITO ESSENCIAL: Garante que o conteúdo do tweet não seja cortado dentro do iframe */
+      width: 100% !important;
+      min-width: unset !important;
+      border: none !important;
+      background-color: transparent !important;
+      box-sizing: border-box !important;
+      display: block !important;
+  }
+
+  /* Opcional: Tenta controlar o scrollbar interno do iframe. Pode não funcionar em todos os casos. */
+  .tweet-container iframe body {
+      overflow-y: hidden !important; /* Tenta remover scrollbar vertical interna do iframe */
+      height: auto !important;
+      min-height: 100% !important;
+  }
+
+  /* Estilo para o rodapé do tweet que às vezes fica cortado (dentro do seu contêiner) */
+  .tweet-container .twitter-tweet-rendered .footer {
+      position: relative !important;
+      top: unset !important;
+      bottom: unset !important;
+      transform: none !important;
+      height: auto !important;
+      overflow: visible !important;
+      padding-top: 10px !important;
+  }
 }
 
-
-
-/* Força o elemento <blockquote class="twitter-tweet"> a se ajustar ao conteúdo */
-blockquote.twitter-tweet {
-  margin: 0 !important; /* Remove margens externas que podem causar corte */
-  border: none !important; /* Remove bordas que podem interferir */
-  max-width: 100% !important; /* Garante que não exceda a largura do contêiner */
-  width: 100% !important; /* Ocupa toda a largura disponível */
-  height: auto !important; /* ESSENCIAL: Permite que a altura se ajuste automaticamente */
-  min-height: unset !important; /* Remove qualquer min-height padrão que possa restringir */
-  overflow: visible !important; /* ESSENCIAL: Garante que o conteúdo que exceda a altura/largura seja visível */
-  display: block !important;
-  box-sizing: border-box !important; /* Inclui padding e border no cálculo da largura/altura */
-}
-
-/* O wrapper que o script do Twitter cria para o iframe.
-   Ele tem uma classe 'twitter-tweet-rendered' ou um atributo 'data-twitter-extracted-i' */
-.twitter-tweet-rendered,
-div[data-twitter-extracted-i] {
-  height: auto !important; /* ESSENCIAL: Altura automática */
-  max-height: none !important; /* ESSENCIAL: Remove limites de altura máxima */
-  overflow: visible !important; /* ESSENCIAL: Garante que o conteúdo interno não seja cortado */
-  display: block !important;
-  width: 100% !important;
-  min-width: unset !important; /* Remove min-width que pode causar scroll horizontal */
-  box-sizing: border-box !important;
-  position: relative !important; /* Pode ajudar no fluxo do layout */
-  /* contain: layout size !important; /* Comentado: Pode causar problemas em alguns navegadores/cenários de embed. Remova se não tiver certeza */
-}
-
-/* O IFRAME REAL que contém o conteúdo do tweet */
-.twitter-tweet-rendered iframe,
-div[data-twitter-extracted-i] iframe {
-  height: auto !important; /* MUITO ESSENCIAL: Permite que o iframe se expanda */
-  max-height: none !important; /* MUITO ESSENCIAL: Remove limite de altura no iframe */
-  overflow: visible !important; /* MUITO ESSENCIAL: Garante que o conteúdo do tweet não seja cortado dentro do iframe */
-  width: 100% !important; /* Garante largura total */
-  min-width: unset !important;
-  border: none !important; /* Remove borda padrão do iframe */
-  background-color: transparent !important; /* Evita fundo branco extra */
-  box-sizing: border-box !important;
-  display: block !important; /* Garante que se comporte como um bloco */
-}
-
-/* O wrapper que você adicionou no PostDetailModal para o tweet embed */
-.twitter-embed-wrapper {
-  display: block;
-  overflow: visible !important; /* Garante que seu wrapper também permita overflow */
-  width: 100%;
-  position: relative;
-  /* min-height e display: flex removidos daqui, pois podem interferir no iframe.
-     A altura será controlada pelos estilos do iframe/blockquote */
-}
-
-/* Regra para o corpo do iframe (pode ser difícil de aplicar de fora) */
-/* Mas tentar garantir que não haja overflow interno indesejado */
-iframe body {
-    overflow-y: hidden !important; /* Tenta remover scrollbar vertical interna do iframe */
-    height: auto !important;
-    min-height: 100% !important;
-}
-
-/* Estilo para o rodapé do tweet que às vezes fica cortado */
-.twitter-tweet-rendered .footer {
-    position: relative !important;
-    top: unset !important;
-    bottom: unset !important;
-    transform: none !important;
-    height: auto !important;
-    overflow: visible !important;
-    padding-top: 10px !important; /* Dá um pouco de espaço extra */
-}
+/* * REMOVIDO: Regras CSS antigas que tentavam controlar o iframe fora do novo contêiner.
+ * Essas regras abaixo foram retiradas porque agora a rolagem é controlada pelo `.tweet-container`
+ * e os estilos do iframe são aplicados *dentro* desse contêiner para garantir que ele se expanda.
+ * * blockquote.twitter-tweet { ... } (Antiga)
+ * .twitter-tweet-rendered, div[data-twitter-extracted-i] { ... } (Antiga)
+ * .twitter-tweet-rendered iframe, div[data-twitter-extracted-i] iframe { ... } (Antiga)
+ * .twitter-embed-wrapper { ... } (Antiga - se não estiver usando para outra coisa)
+ * iframe body { ... } (Antiga - substituída pela versão `.tweet-container iframe body`)
+ * .twitter-tweet-rendered .footer { ... } (Antiga - substituída pela versão `.tweet-container .twitter-tweet-rendered .footer`)
+*/
