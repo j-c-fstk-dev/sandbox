@@ -240,13 +240,3 @@ export default function CommunityPage() {
     </div>
   );
 }
-
-declare global {
-  interface Window {
-    twttr?: {
-      widgets: {
-        load: (element?: HTMLElement) => void;
-      };
-    };
-  }
-}
