@@ -156,6 +156,21 @@ body {
   }
 }
 
+/* --- Animação de Brilho no Texto --- */
+@keyframes text-shine {
+  0% {
+    background-position: 200% center;
+  }
+  100% {
+    background-position: -200% center;
+  }
+}
+
+.animate-text-shine {
+  background-size: 200% auto;
+  animation: text-shine 3s linear infinite;
+  animation-delay: 1.5s; /* Opcional: Atraso para iniciar a animação */
+}
 /* * REMOVIDO: Regras CSS antigas que tentavam controlar o iframe fora do novo contêiner.
  * Essas regras abaixo foram retiradas porque agora a rolagem é controlada pelo `.tweet-container`
  * e os estilos do iframe são aplicados *dentro* desse contêiner para garantir que ele se expanda.

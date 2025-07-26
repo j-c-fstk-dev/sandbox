@@ -23,25 +23,21 @@ export default function Footer() {
               <a
                 href="/about"
                 className="block text-gray-300 hover:text-primary-green transition-colors duration-200" data-oid="l4hvu.g">
-
                 About Us
               </a>
               <a
                 href="/blog"
                 className="block text-gray-300 hover:text-primary-green transition-colors duration-200" data-oid="shydnn1">
-
                 Blog
               </a>
               <a
                 href="/actions"
                 className="block text-gray-300 hover:text-primary-green transition-colors duration-200" data-oid="9-3:.us">
-
                 Actions
               </a>
               <a
                 href="/community"
                 className="block text-gray-300 hover:text-primary-green transition-colors duration-200" data-oid="j68qnpy">
-
                 Community
               </a>
             </nav>
@@ -54,12 +50,10 @@ export default function Footer() {
               <a
                 href="mailto:MonthlyEarthDay@gmail.com"
                 className="flex items-center space-x-2 text-gray-300 hover:text-primary-green transition-colors duration-200" data-oid="qu.yb9q">
-
                 <svg
                   className="w-5 h-5"
                   fill="currentColor"
                   viewBox="0 0 20 20" data-oid="sxc26ti">
-
                   <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" data-oid="i-p22vf" />
                   <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" data-oid="wdmmzs2" />
                 </svg>
@@ -70,12 +64,10 @@ export default function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center space-x-2 text-gray-300 hover:text-primary-green transition-colors duration-200" data-oid="3z4rayv">
-
                 <svg
                   className="w-5 h-5"
                   fill="currentColor"
                   viewBox="0 0 24 24" data-oid="4tacoj6">
-
                   <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" data-oid="691nouf" />
                 </svg>
                 <span data-oid="l8gzqq.">@MonthlyEarthDay</span> {/* Updated X handle text */}
@@ -85,12 +77,22 @@ export default function Footer() {
         </div>
 
         {/* Copyright */}
-        <div className="mt-8 pt-8 border-t border-gray-700 text-center" data-oid="3.9vc48">
+        <div className="mt-8 pt-8 border-t border-gray-700 text-center flex flex-col items-center justify-center space-y-2" data-oid="3.9vc48">
+          {/* This is the new glowing text section */}
+          <a href="https://beregenerativelife.wordpress.com/" target="_blank" rel="noopener noreferrer" className="transition-opacity hover:opacity-80">
+            <p className="animate-text-shine bg-gradient-to-r from-gray-400 via-white to-gray-400 bg-clip-text text-lg font-semibold text-transparent">
+              Powered by BeRegen ®
+            </p>
+          </a>
+        
+          {/* End of new glowing text section */}
+
+          {/* Original copyright line (can be removed or kept as needed) */}
           <p className="text-gray-400" data-oid="fugrxpa">
             © {new Date().getFullYear()} #MonthlyEarthDay. All rights reserved.
           </p>
         </div>
       </div>
-    </footer>);
-
+    </footer>
+  );
 }
