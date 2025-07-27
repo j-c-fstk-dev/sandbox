@@ -746,6 +746,9 @@ video {
 .visible {
   visibility: visible;
 }
+.static {
+  position: static;
+}
 .fixed {
   position: fixed;
 }
@@ -825,9 +828,6 @@ video {
 }
 .ml-4 {
   margin-left: 1rem;
-}
-.mt-1 {
-  margin-top: 0.25rem;
 }
 .mt-12 {
   margin-top: 3rem;
@@ -1562,10 +1562,6 @@ video {
 .text-gray-400 {
   --tw-text-opacity: 1;
   color: rgb(156 163 175 / var(--tw-text-opacity, 1));
-}
-.text-gray-500 {
-  --tw-text-opacity: 1;
-  color: rgb(107 114 128 / var(--tw-text-opacity, 1));
 }
 .text-gray-700 {
   --tw-text-opacity: 1;

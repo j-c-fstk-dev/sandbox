@@ -43,6 +43,8 @@ export default function RootLayout({
         <Header data-oid="-h:65mu" />
         <main className="pt-16" data-oid="nz_b-74">{children}</main>
         <Footer data-oid="p9xf9gx" />
+        <Script src="https://static.elfsight.com/platform/platform.js" async></Script>
+        <div className="elfsight-app-a7ba2642-cace-4ea0-ba96-3945abe83163" data-elfsight-app-lazy></div>
       </body>
     </html>);
 
