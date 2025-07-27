@@ -16,6 +16,7 @@ const generateMonthlyEarthDayEvents = (yearsToGenerate: number) => {
       const eventDay = 22;
       const eventDate = new Date(year, month, eventDay);
 
+      // Keep generating events from the current date onwards
       if (eventDate >= today || (eventDate.toDateString() === today.toDateString())) {
         if (eventDate.getDate() === eventDay) {
           events.push({
@@ -34,18 +35,33 @@ const generateMonthlyEarthDayEvents = (yearsToGenerate: number) => {
   return events;
 };
 
-const monthlyEarthDayEvents = generateMonthlyEarthDayEvents(2);
+let monthlyEarthDayEvents = generateMonthlyEarthDayEvents(2);
 
 // Sort events chronologically
 monthlyEarthDayEvents.sort((a, b) => new Date(a.date).getTime() - new Date(b.date).getTime());
 
-// Find the next upcoming event
-const nextUpcomingEvent = monthlyEarthDayEvents.find(event => new Date(event.date) >= new Date());
+// Find the index of the next upcoming event (August 22, 2025)
+const nextUpcomingEventIndex = monthlyEarthDayEvents.findIndex(event => {
+  const eventDate = new Date(event.date);
+  return eventDate.getFullYear() === 2025 && eventDate.getMonth() === 7 && eventDate.getDate() === 22; // Month is 0-indexed, so August is 7
+});
+
+// If the August 22, 2025 event is found, slice the array from that point
+if (nextUpcomingEventIndex !== -1) {
+  monthlyEarthDayEvents = monthlyEarthDayEvents.slice(nextUpcomingEventIndex);
+} else {
+  // If for some reason it's not found, still show events from today onwards
+  monthlyEarthDayEvents = monthlyEarthDayEvents.filter(event => new Date(event.date) >= new Date());
+}
+
+// The first event in the sliced list is now the next upcoming one to highlight
+const nextUpcomingEvent = monthlyEarthDayEvents[0];
+
 
 export default function CalendarPage() {
   const today = new Date();
-  const [displayMonth, setDisplayMonth] = useState(today.getMonth());
-  const [displayYear, setDisplayYear] = useState(today.getFullYear());
+  const [displayMonth, setDisplayMonth] = useState(nextUpcomingEvent ? new Date(nextUpcomingEvent.date).getMonth() : today.getMonth());
+  const [displayYear, setDisplayYear] = useState(nextUpcomingEvent ? new Date(nextUpcomingEvent.date).getFullYear() : today.getFullYear());
 
   const months = [
     "January", "February", "March", "April", "May", "June",

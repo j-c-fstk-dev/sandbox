@@ -35,7 +35,7 @@ export default function Page() {
 
   const featuredAction = {
     name: "Community Clean-Up Drive",
-    date: "July 22, 2025",
+    date: "August 22, 2025",
     description:
       "Join local communities worldwide in cleaning up parks, beaches, and neighborhoods."
   };
@@ -328,27 +328,6 @@ export default function Page() {
                 View on Calendar
               </Button>
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Blog Highlights Section */}
-      <section className="py-16 px-4 bg-white">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-12">
-            <h2 className="font-serif font-bold text-3xl md:text-4xl text-neutral-text-dark mb-4">
-              Latest from the Blog
-            </h2>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
-            {blogPosts.map((post, index) =>
-              <BlogPostCard key={index} {...post} />
-            )}
-          </div>
-          <div className="text-center">
-            <Button variant="outline" href="/blog">
-              View All Posts
-            </Button>
           </div>
         </div>
       </section>
