@@ -389,6 +389,27 @@ export default function Page() {
           </div>
         </div>
       </section>
+
+      {/* GoFundMe Section */}
+      <section id="gofundme-section" className="py-16 px-4 bg-primary-light-green">
+        <div className="container max-w-6xl mx-auto text-center">
+          <h2 className="font-serif font-bold text-3xl md:text-4xl text-neutral-text-dark mb-8">
+            Become a Supporter of Environmental Change
+          </h2>
+          <p className="text-neutral-dark-gray mb-6 leading-relaxed">
+            The #MonthlyEarthDay is more than just an event; it's a continuous commitment to our planet. Our movement is built on a foundation of monthly action, with the goal of creating sustainable habits and strengthening a global community of environmentalists.
+          </p>
+          <p className="text-neutral-dark-gray mb-6 leading-relaxed">
+            Your donation through our GoFundMe allows us to sustain and expand this vital work. The funds raised will be invested directly in our initiatives, helping to finance cleanups, tree-planting projects, and educational activities.
+          </p>
+          <p className="text-neutral-dark-gray mb-8 leading-relaxed">
+            By contributing, you are not just donating to a cause—you are investing in the future of our planet. Join us and be a part of this change.
+          </p>
+          <a href="https://gofund.me/7af3a38d" target="_blank" className="bg-[#017d8c] hover:bg-[#016a77] text-white transition inline-block px-8 py-3 text-lg font-semibold rounded-md shadow gofundme-button">
+            Support Now
+          </a>
+        </div>
+      </section>
     </div>
   );
 }

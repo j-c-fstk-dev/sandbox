@@ -40,6 +40,12 @@ export default function Footer() {
                 className="block text-gray-300 hover:text-primary-green transition-colors duration-200" data-oid="j68qnpy">
                 Community
               </a>
+              <a
+                href="https://gofund.me/7af3a38d"
+                target="_blank"
+                className="block text-gray-300 hover:text-primary-green transition-colors duration-200" data-oid="l6a8h3m">
+                GoFundMe
+              </a>
             </nav>
           </div>
 

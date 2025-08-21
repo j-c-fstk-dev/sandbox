@@ -7,13 +7,16 @@ export default function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const navLinks = [
-  { href: "/about", label: "About Us" },
-  { href: "/blog", label: "Blog" },
-  { href: "/actions", label: "Actions" },
-  { href: "/calendar", label: "Calendar" },
-  { href: "/community", label: "Community" },
-  { href: "/testimonials", label: "Testimonials" },
-  { href: "/contact", label: "Contact" }];
+    { href: "/", label: "Home" },
+    { href: "/about", label: "About Us" },
+    { href: "/blog", label: "Blog" },
+    { href: "/actions", label: "Actions" },
+    { href: "/calendar", label: "Calendar" },
+    { href: "/community", label: "Community" },
+    { href: "/testimonials", label: "Testimonials" },
+    { href: "/contact", label: "Contact" },
+    { href: "#gofundme-section", label: "GoFundMe" }, // Added GoFundMe link
+  ];
 
 
   return (
