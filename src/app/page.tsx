@@ -9,8 +9,6 @@ import TestimonialCard from "@/components/TestimonialCard";
 import { Users, Globe, TreePine, Recycle } from 'lucide-react';
 import Script from 'next/script';
 
-import EventPopup from '@/components/EventPopup';
-
 export default function Page() {
   const [showScrollClue, setShowScrollClue] = useState(true);
 
@@ -33,12 +31,6 @@ export default function Page() {
       }
     };
   }, []);
-
-  const [isPopupVisible, setIsPopupVisible] = useState(true);
-
-  const closePopup = () => {
-    setIsPopupVisible(false);
-  };
 
   const featuredAction = {
     name: "Community Clean-Up Drive",
@@ -182,11 +174,8 @@ export default function Page() {
     }
   ];
 
-
   return (
     <div className="min-h-screen">
-      <EventPopup isVisible={isPopupVisible} onClose={closePopup} />
-
       {/* Script para o Twitter, necessário para o embed */}
       <Script
         src="https://platform.twitter.com/widgets.js"
@@ -254,7 +243,6 @@ export default function Page() {
           ></path>
         </svg>
       </div>
-
 
       {/* Impact Statistics */}
       <section className="py-16 px-4 bg-gray-50">
