@@ -75,10 +75,16 @@ export default function BlogPostPage() {
 
         {/* Navigation (optional for specific page, but [slug]/page handles overall nav) */}
         <div className="mt-8 text-center">
+            <Link href="/blog/the-ripple-effect-of-collective-action" className="inline-flex items-center text-primary-green hover:text-primary-green-dark font-medium transition-colors duration-200">
+              ← Previous Post
+            </Link>
             <Link
               href="/blog"
-              className="inline-flex items-center text-primary-green hover:text-primary-green-dark font-medium transition-colors duration-200">
+              className="inline-flex items-center text-primary-green hover:text-primary-green-dark font-medium transition-colors duration-200  ml-4">
               ← Back to Blog
+            </Link>
+            <Link href="/blog/reduce-carbon-footprint" className="inline-flex items-center text-primary-green hover:text-primary-green-dark font-medium transition-colors duration-200 ml-4">
+              Next Post →
             </Link>
         </div>
       </article>
