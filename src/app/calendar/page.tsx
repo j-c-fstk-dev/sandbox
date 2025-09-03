@@ -136,51 +136,6 @@ export default function CalendarPage() {
           </div>
         )}
 
-        {/* New Upcoming Event */}
-        <div className="bg-white rounded-lg p-6 shadow-sm mb-8 animate-slide-up">
-          <div className="flex flex-col lg:flex-row lg:items-start gap-6">
-            {/* Date Badge */}
-            <div className="flex-shrink-0">
-              <div className="bg-[#c9e6db] text-[#365b36] rounded-lg p-4 text-center min-w-[120px]">
-                <div className="text-2xl font-bold">
-                  22
-                </div>
-                <div className="text-sm opacity-90">
-                  August
-                </div>
-              </div>
-            </div>
-
-            {/* Event Details */}
-            <div className="flex-1">
-              <h3 className="font-serif font-bold text-xl md:text-2xl text-neutral-text-dark mb-2">
-                Let’s GROW Live - Monthly EarthStream
-              </h3>
-              <p className="text-neutral-dark-gray leading-relaxed mb-4">
-                Let's GROW DAO introduces Let’s GROW Live - Monthly EarthStream: a 24-hour livestream airing on the 22nd of each month in celebration of the growing global Monthly Earth Day movement.
-              </p>
-              <p className="text-neutral-dark-gray leading-relaxed mb-4">
-                This recurring cultural moment blends music, storytelling, and live conversations with climate leaders, artists, and grassroots voices from around the world.
-              </p>
-              <h4 className="font-serif font-bold text-lg text-neutral-text-dark mb-2">Our Why</h4>
-              <p className="text-neutral-dark-gray leading-relaxed mb-4">
-                Regeneration and climate stories remain scattered and underfunded. Let’s GROW Live provides a narrative home for regens—turning attention into coordination, coordination into resources, and resources into impact.
-              </p>
-              <h4 className="font-serif font-bold text-lg text-neutral-text-dark mb-2">Invitation</h4>
-              <p className="text-neutral-dark-gray leading-relaxed mb-4">
-                We're inviting hosts and stewards from all over the globe to co-create this event.
-              </p>
-              <p className="text-neutral-dark-gray leading-relaxed mb-4">
-                <a href="https://www.letsgrow.network/form" target="_blank" className="text-[#365b36] hover:text-primary-green-dark font-medium transition-colors duration-200">👉 Sign up here</a>
-              </p>
-              <Link href="https://lu.ma/odehuwob" className="text-[#365b36] hover:text-primary-green-dark font-medium transition-colors duration-200" target="_blank">
-                Learn More and Join
-              </Link> →
-              <p className="text-neutral-dark-gray leading-relaxed mt-4">Let's GROW! 💚</p>
-            </div>
-          </div>
-        </div>
-
         {/* Month Navigation and Display - Adjusted styling */}
         <div className="bg-white rounded-lg p-6 shadow-sm mb-8 animate-slide-up">
           <div className="flex items-center justify-between mb-6">
