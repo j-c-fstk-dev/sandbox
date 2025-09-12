@@ -9,6 +9,44 @@ import TestimonialCard from "@/components/TestimonialCard";
 import { Users, Globe, TreePine, Recycle } from 'lucide-react';
 import Script from 'next/script';
 
+// Function to generate Monthly Earth Day events
+const generateMonthlyEarthDayEvents = (yearsToGenerate: number) => {
+  const events = [];
+  const today = new Date();
+  const currentYear = today.getFullYear();
+
+  for (let i = 0; i < yearsToGenerate; i++) {
+    const year = currentYear + i;
+    for (let month = 0; month < 12; month++) {
+      const eventDay = 22;
+      // To handle the "show next month's event after the 22nd" logic,
+      // we can adjust the "today" date we compare against.
+      const comparisonDate = new Date();
+      if (comparisonDate.getDate() > 22) {
+        // If it's past the 22nd, we are looking for events in the next month.
+        comparisonDate.setMonth(comparisonDate.getMonth() + 1);
+        comparisonDate.setDate(1); // Start of next month
+      }
+      
+      const eventDate = new Date(year, month, eventDay);
+
+      if (eventDate >= comparisonDate) {
+        if (eventDate.getDate() === eventDay) {
+          events.push({
+            name: "Monthly Earth Day Action",
+            date: eventDate.toDateString(),
+            description: "Join us for a global environmental action on the 22nd of the month!",
+            location: "Worldwide (Various Local Events)",
+            slug: `monthly-earth-day-${year}-${month + 1}-${eventDay}`,
+          });
+        }
+      }
+    }
+  }
+  return events;
+};
+
+
 export default function Page() {
   const [showScrollClue, setShowScrollClue] = useState(true);
 
@@ -32,11 +70,17 @@ export default function Page() {
     };
   }, []);
 
-  const featuredAction = {
-    name: "Community Clean-Up Drive",
-    date: "August 22, 2025",
-    description:
-      "Join local communities worldwide in cleaning up parks, beaches, and neighborhoods."
+  const monthlyEarthDayEvents = generateMonthlyEarthDayEvents(2);
+  monthlyEarthDayEvents.sort((a, b) => new Date(a.date).getTime() - new Date(b.date).getTime());
+  const nextUpcomingEvent = monthlyEarthDayEvents.length > 0 ? monthlyEarthDayEvents[0] : null;
+
+  const formatDate = (dateString: string) => {
+    const date = new Date(dateString);
+    return date.toLocaleDateString("en-US", {
+      month: "long",
+      day: "numeric",
+      year: "numeric"
+    });
   };
 
   const blogPosts = [
@@ -174,6 +218,7 @@ export default function Page() {
     }
   ];
 
+
   return (
     <div className="min-h-screen">
       {/* Script para o Twitter, necessário para o embed */}
@@ -244,6 +289,7 @@ export default function Page() {
         </svg>
       </div>
 
+
       {/* Impact Statistics */}
       <section className="py-16 px-4 bg-gray-50">
         <div className="max-w-6xl mx-auto">
@@ -310,21 +356,33 @@ export default function Page() {
             </h2>
           </div>
           <div className="max-w-2xl mx-auto">
-            <div className="card text-center animate-slide-up">
-              <div className="text-4xl mb-4">🌍</div>
-              <h3 className="font-serif font-bold text-2xl text-neutral-text-dark mb-3">
-                {featuredAction.name}
-              </h3>
-              <p className="text-primary-green font-semibold text-lg mb-4">
-                {featuredAction.date}
-              </p>
-              <p className="text-neutral-dark-gray mb-6 leading-relaxed">
-                {featuredAction.description}
-              </p>
-              <Button variant="secondary" href="/calendar">
-                View on Calendar
-              </Button>
-            </div>
+            {nextUpcomingEvent ? (
+              <div className="card text-center animate-slide-up">
+                <div className="text-4xl mb-4">🌍</div>
+                <h3 className="font-serif font-bold text-2xl text-neutral-text-dark mb-3">
+                  {nextUpcomingEvent.name}
+                </h3>
+                <p className="text-primary-green font-semibold text-lg mb-4">
+                  {formatDate(nextUpcomingEvent.date)}
+                </p>
+                <p className="text-neutral-dark-gray mb-6 leading-relaxed">
+                  {nextUpcomingEvent.description}
+                </p>
+                <Button variant="secondary" href="/calendar">
+                  View on Calendar
+                </Button>
+              </div>
+            ) : (
+              <div className="text-center py-8">
+                <div className="text-6xl mb-4">📅</div>
+                <h3 className="font-serif font-bold text-2xl text-neutral-text-dark mb-4">
+                  No upcoming events scheduled.
+                </h3>
+                <p className="text-neutral-dark-gray">
+                  Please check back later for future events.
+                </p>
+              </div>
+            )}
           </div>
         </div>
       </section>
@@ -384,27 +442,6 @@ export default function Page() {
               View All Testimonials
             </Button>
           </div>
-        </div>
-      </section>
-
-      {/* GoFundMe Section */}
-      <section id="gofundme-section" className="py-16 px-4 bg-primary-light-green">
-        <div className="container max-w-6xl mx-auto text-center">
-          <h2 className="font-serif font-bold text-3xl md:text-4xl text-neutral-text-dark mb-8">
-            Become a Supporter of Environmental Change
-          </h2>
-          <p className="text-neutral-dark-gray mb-6 leading-relaxed">
-            The #MonthlyEarthDay is more than just an event; it's a continuous commitment to our planet. Our movement is built on a foundation of monthly action, with the goal of creating sustainable habits and strengthening a global community of environmentalists.
-          </p>
-          <p className="text-neutral-dark-gray mb-6 leading-relaxed">
-            Your donation through our GoFundMe allows us to sustain and expand this vital work. The funds raised will be invested directly in our initiatives, helping to finance cleanups, tree-planting projects, and educational activities.
-          </p>
-          <p className="text-neutral-dark-gray mb-8 leading-relaxed">
-            By contributing, you are not just donating to a cause—you are investing in the future of our planet. Join us and be a part of this change.
-          </p>
-          <a href="https://gofund.me/7af3a38d" target="_blank" className="bg-[#017d8c] hover:bg-[#016a77] text-white transition inline-block px-8 py-3 text-lg font-semibold rounded-md shadow gofundme-button">
-            Support Now
-          </a>
         </div>
       </section>
     </div>
