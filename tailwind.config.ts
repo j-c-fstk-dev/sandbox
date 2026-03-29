@@ -27,6 +27,7 @@ export default {
           "text-light": "#FFFFFF",
           "text-dark": "#212121",
         },
+        "neon-green": "#39FF14",
         // Keep existing variables for compatibility
         background: "var(--background)",
         foreground: "var(--foreground)",
@@ -38,20 +39,21 @@ export default {
       animation: {
         // Suas animações existentes
         "fade-in": "fadeIn 0.5s ease-in-out",
-        "slide-up": "slideUp 0.3s ease-out", // Note: Este nome já existe, vamos manter o que você tem.
+        "slide-up": "slideUp 0.3s ease-out",
 
         // ANIMAÇÕES ADICIONADAS PARA O SCROLL CLUE E PULSAÇÃO DO LOGO
-        "bounce": "bounce 1s infinite", // Do scroll clue
-        "fade-in-up": "fade-in-up 0.5s ease-out forwards", // Base para delays
-        "scroll-clue-wave": "scroll-clue-wave 1.5s infinite ease-in-out", // Do scroll clue (se usar o >>>)
-        "subtle-pulse": "subtle-pulse 3s infinite ease-in-out", // Nova animação de pulsação do logo
+        "bounce": "bounce 1s infinite",
+        "fade-in-up": "fade-in-up 0.5s ease-out forwards",
+        "scroll-clue-wave": "scroll-clue-wave 1.5s infinite ease-in-out",
+        "subtle-pulse": "subtle-pulse 3s infinite ease-in-out",
+        "neon-pulse": "neon-pulse 2s infinite ease-in-out",
 
-        // ANIMAÇÕES PARA OS CARDS COM DELAY (se ainda precisar delas para outras seções)
+        // ANIMAÇÕES PARA OS CARDS COM DELAY
         "fade-in-up-delay-1": "fade-in-up 0.5s ease-out forwards 0.1s",
         "fade-in-up-delay-2": "fade-in-up 0.5s ease-out forwards 0.2s",
         "fade-in-up-delay-3": "fade-in-up 0.5s ease-out forwards 0.3s",
         "fade-in-up-delay-4": "fade-in-up 0.5s ease-out forwards 0.4s",
-        "fade-in-up-delay-5": "fade-in-up 0.5s ease-out forwards 0.5s", // Para a lista de objetivos
+        "fade-in-up-delay-5": "fade-in-up 0.5s ease-out forwards 0.5s",
       },
       keyframes: {
         // Seus keyframes existentes
@@ -64,8 +66,7 @@ export default {
           "100%": { transform: "translateY(0)", opacity: "1" },
         },
 
-        // KEYFRAMES ADICIONADOS PARA O SCROLL CLUE E PULSAÇÃO DO LOGO
-        // Keyframe 'bounce' (se você estiver usando a classe 'animate-bounce' em algum lugar, como na seta do scroll clue)
+        // KEYFRAMES ADICIONADOS
         bounce: {
             '0%, 100%': {
                 transform: 'translateY(-25%)',
@@ -76,11 +77,11 @@ export default {
                 animationTimingFunction: 'cubic-bezier(0, 0, 0.2, 1)',
             },
         },
-        'fade-in-up': { // Keyframe base para as animações de entrada com delay
+        'fade-in-up': {
           '0%': { opacity: '0', transform: 'translateY(20px)' },
           '100%': { opacity: '1', transform: 'translateY(0)' },
         },
-        'scroll-clue-wave': { // Keyframe para o scroll clue de '>>>' (se você usá-lo)
+        'scroll-clue-wave': {
           '0%, 100%': {
             opacity: '0',
             transform: 'translateY(-5px) rotate(90deg)',
@@ -90,15 +91,24 @@ export default {
             transform: 'translateY(0px) rotate(90deg)',
           },
         },
-        // --- NOVO KEYFRAME DE PULSAÇÃO DO LOGO ---
         'subtle-pulse': {
           '0%, 100%': {
-            transform: 'scale(1)', // Tamanho original
-            opacity: '1', // Opacidade original
+            transform: 'scale(1)',
+            opacity: '1',
           },
           '50%': {
-            transform: 'scale(1.01)', // Levemente maior
-            opacity: '0.95', // Levemente mais transparente
+            transform: 'scale(1.01)',
+            opacity: '0.95',
+          },
+        },
+        'neon-pulse': {
+          '0%, 100%': {
+            transform: 'scale(1)',
+            boxShadow: '0 0 5px #39FF14, 0 0 10px #39FF14, 0 0 15px #39FF14',
+          },
+          '50%': {
+            transform: 'scale(1.05)',
+            boxShadow: '0 0 10px #39FF14, 0 0 20px #39FF14, 0 0 30px #39FF14',
           },
         },
       },

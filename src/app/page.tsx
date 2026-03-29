@@ -7,6 +7,7 @@ import BlogPostCard from "@/components/BlogPostCard";
 import CommunityPostCard from "@/components/CommunityPostCard";
 import TestimonialCard from "@/components/TestimonialCard";
 import { Users, Globe, TreePine, Recycle } from 'lucide-react';
+import FloatingLogo from '@/components/FloatingLogo';
 import Script from 'next/script';
 
 // Function to generate Monthly Earth Day events
@@ -221,6 +222,7 @@ export default function Page() {
 
   return (
     <div className="min-h-screen">
+      <FloatingLogo />
       {/* Script para o Twitter, necessário para o embed */}
       <Script
         src="https://platform.twitter.com/widgets.js"
@@ -328,7 +330,7 @@ export default function Page() {
                 <TreePine size={48} strokeWidth={1.5} />
               </div>
               <div className="text-4xl font-bold text-[#365b36] mb-2">
-                47,426
+                76,266
               </div>
               <div className="text-neutral-dark-gray text-center text-lg">Trees Planted</div>
             </div>
@@ -339,7 +341,7 @@ export default function Page() {
                 <Recycle size={48} strokeWidth={1.5} />
               </div>
               <div className="text-4xl font-bold text-neutral-dark-gray mb-2">
-                15,998 lb
+                18,055 lb
               </div>
               <div className="text-neutral-dark-gray text-center text-lg">Litter Cleaned Up</div>
             </div>
