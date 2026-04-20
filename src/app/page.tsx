@@ -218,6 +218,19 @@ export default function Page() {
         "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=60&h=60&fit=crop&crop=face"
     }
   ];
+  
+  const partners = [
+    {
+      name: "Global Environmental Impact Solutions (GEINS)",
+      link: "https://www.geisolutions.com",
+      image: "https://res.cloudinary.com/dr0weongo/image/upload/v1776718505/geis_jnxchk.jpg"
+    },
+    {
+      name: "PlasticCTO",
+      link: "https://www.plasticthewhalekiller.com",
+      image: "https://res.cloudinary.com/dr0weongo/image/upload/v1776718505/plastic_xoxfnx.jpg"
+    }
+  ];
 
 
   return (
@@ -388,6 +401,38 @@ export default function Page() {
           </div>
         </div>
       </section>
+
+      {/* Partners Section */}
+      <section className="py-16 px-4 bg-gray-50">
+        <div className="max-w-6xl mx-auto text-center">
+          <h2 className="font-serif font-bold text-3xl md:text-4xl text-neutral-text-dark mb-12">
+            Our Partners
+          </h2>
+          <div className="flex justify-center items-center gap-12 flex-wrap">
+            {partners.map((partner, index) => (
+              <a
+                key={index}
+                href={partner.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex flex-col items-center gap-4 group"
+              >
+                <div className="w-40 h-40 md:w-48 md:h-48 rounded-full overflow-hidden shadow-lg transform group-hover:scale-105 transition-transform duration-300">
+                  <img
+                    src={partner.image}
+                    alt={partner.name}
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <span className="text-neutral-dark-gray font-semibold text-lg max-w-xs">
+                  {partner.name}
+                </span>
+              </a>
+            ))}
+          </div>
+        </div>
+      </section>
+
 {/* Community Highlights Section - LAYOUT OTIMIZADO PARA MAIS DENSIDADE */}
 <section className="py-16 px-4">
         <div className="max-w-6xl mx-auto">

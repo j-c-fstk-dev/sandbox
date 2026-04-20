@@ -97,6 +97,9 @@ export default function Footer() {
           <p className="text-gray-400" data-oid="fugrxpa">
             © {new Date().getFullYear()} #MonthlyEarthDay. All rights reserved.
           </p>
+           <p className="text-gray-400 text-sm">
+            Monthly Earth Day operates as a 501(c)(3) Non-Profit Organization.
+          </p>
         </div>
       </div>
     </footer>
