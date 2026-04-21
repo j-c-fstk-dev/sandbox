@@ -223,12 +223,14 @@ export default function Page() {
     {
       name: "Global Environmental Impact Solutions (GEINS)",
       link: "https://www.geisolutions.com",
-      image: "https://res.cloudinary.com/dr0weongo/image/upload/v1776718505/geis_jnxchk.jpg"
+      image: "https://res.cloudinary.com/dr0weongo/image/upload/v1776718505/geis_jnxchk.jpg",
+      description: "Global Environmental Impact Solutions (GEIS) is the creator of the Plastic Impact Protocol — the world's first published, versioned, publicly auditable governing standard for plastic credits. Built on U.S.-regulated infrastructure, backed by individual-level blockchain data, and active across 12 nations through the Treegens Foundation, GEIS closes 16 documented structural failures that have allowed fraud, incineration, and greenwashing to dominate the plastic credit market. As a SAM.gov-registered Service-Disabled Veteran-Owned Small Business, GEIS is the only plastic credit program with a federal procurement mandate — and the only one Nestlé, Danone, and Unilever can actually point to when they say they are waiting for a credible standard. That standard now exists."
     },
     {
       name: "PlasticCTO",
       link: "https://www.plasticthewhalekiller.com",
-      image: "https://res.cloudinary.com/dr0weongo/image/upload/v1776718505/plastic_xoxfnx.jpg"
+      image: "https://res.cloudinary.com/dr0weongo/image/upload/v1776718505/plastic_xoxfnx.jpg",
+      description: "PlasticCTO is the community brand behind the Plastic Impact Network — a global movement of individuals, collectors, advocates, and builders united around one mission: making plastic cleanup verifiable, transparent, and impossible to fake. Powered by $Plastic, the ecosystem token on Solana, PlasticCTO connects community members to the world's most documented plastic credit infrastructure — backed by GEIS Plastic Impact Protocol, individual-level blockchain data, and active cleanup operations across 12 nations. Where Protocol v4.2 governs the institutional credit market, PlasticCTO and $Plastic power the people behind the cleanup."
     }
   ];
 
@@ -402,37 +404,6 @@ export default function Page() {
         </div>
       </section>
 
-      {/* Partners Section */}
-      <section className="py-16 px-4 bg-gray-50">
-        <div className="max-w-6xl mx-auto text-center">
-          <h2 className="font-serif font-bold text-3xl md:text-4xl text-neutral-text-dark mb-12">
-            Our Partners
-          </h2>
-          <div className="flex justify-center items-center gap-12 flex-wrap">
-            {partners.map((partner, index) => (
-              <a
-                key={index}
-                href={partner.link}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex flex-col items-center gap-4 group"
-              >
-                <div className="w-40 h-40 md:w-48 md:h-48 rounded-full overflow-hidden shadow-lg transform group-hover:scale-105 transition-transform duration-300">
-                  <img
-                    src={partner.image}
-                    alt={partner.name}
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-                <span className="text-neutral-dark-gray font-semibold text-lg max-w-xs">
-                  {partner.name}
-                </span>
-              </a>
-            ))}
-          </div>
-        </div>
-      </section>
-
 {/* Community Highlights Section - LAYOUT OTIMIZADO PARA MAIS DENSIDADE */}
 <section className="py-16 px-4">
         <div className="max-w-6xl mx-auto">
@@ -488,6 +459,49 @@ export default function Page() {
             <Button variant="outline" href="/testimonials">
               View All Testimonials
             </Button>
+          </div>
+        </div>
+      </section>
+
+      {/* Partners Section */}
+      <section className="py-16 px-4 bg-gray-50">
+        <div className="max-w-6xl mx-auto px-4">
+          <h2 className="font-serif font-bold text-3xl md:text-4xl text-center text-neutral-text-dark mb-12">
+            Our Partners
+          </h2>
+          <div className="flex flex-col items-center gap-16">
+            {partners.map((partner, index) => (
+              <div key={index} className="flex flex-col md:flex-row items-center gap-8 md:gap-12 w-full max-w-4xl">
+                <a
+                  href={partner.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex-shrink-0"
+                >
+                  <div className="w-32 h-32 md:w-40 md:h-40 rounded-full overflow-hidden shadow-lg transform hover:scale-105 transition-transform duration-300 mx-auto">
+                    <img
+                      src={partner.image}
+                      alt={partner.name}
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                </a>
+                <div className="text-center md:text-left">
+                  <a
+                    href={partner.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <h3 className="font-serif font-bold text-2xl text-neutral-text-dark mb-4 hover:text-primary-green transition-colors">
+                      {partner.name}
+                    </h3>
+                  </a>
+                  <p className="text-neutral-dark-gray leading-relaxed">
+                    {partner.description}
+                  </p>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </section>
