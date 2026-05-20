@@ -15,7 +15,7 @@ export default function Header() {
     { href: "/community", label: "Community" },
     { href: "/testimonials", label: "Testimonials" },
     { href: "/contact", label: "Contact" },
-    { href: "#gofundme-section", label: "GoFundMe" }, // Added GoFundMe link
+    { href: "/donate", label: "Donate" },
   ];
 
 
